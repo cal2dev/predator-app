@@ -1,9 +1,5 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-/* load MX core classes */
-require_once dirname(__FILE__).'/Lang.php';
-require_once dirname(__FILE__).'/Config.php';
-
 /**
  * Modular Extensions - HMVC
  *
@@ -11,12 +7,13 @@ require_once dirname(__FILE__).'/Config.php';
  * @link	http://codeigniter.com
  *
  * Description:
- * This library creates a CI class which allows the use of modules in an application.
+ * This library extends the CodeIgniter CI_Language class
+ * and adds features allowing use of modules and the HMVC design pattern.
  *
- * Install this file as application/third_party/MX/Ci.php
+ * Install this file as application/third_party/MX/Lang.php
  *
- * @copyright	Copyright (c) 2015 Wiredesignz
- * @version 	5.5
+ * @copyright	Copyright (c) 2011 Wiredesignz
+ * @version 	5.4
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,22 +33,38 @@ require_once dirname(__FILE__).'/Config.php';
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  **/
-class CI
+class MX_Lang extends CI_Lang
 {
-	public static $APP;
+	public function load($langfile = array(), $lang = '', $return = FALSE, $add_suffix = TRUE, $alt_path = '', $_module = '')	{
+		
+		if (is_array($langfile)) {
+			foreach($langfile as $_lang) $this->load($_lang);
+			return $this->language;
+		}
+			
+		$deft_lang = CI::$APP->config->item('language');
+		$idiom = ($lang == '') ? $deft_lang : $lang;
 	
-	public function __construct() {
+		if (in_array($langfile.'_lang'.EXT, $this->is_loaded, TRUE))
+			return $this->language;
+
+		$_module OR $_module = CI::$APP->router->fetch_module();
+		list($path, $_langfile) = Modules::find($langfile.'_lang', $_module, 'language/'.$idiom.'/');
+
+		if ($path === FALSE) {
+			
+			if ($lang = parent::load($langfile, $lang, $return, $add_suffix, $alt_path)) return $lang;
 		
-		/* assign the application instance */
-		self::$APP = CI_Controller::get_instance();
+		} else {
+
+			if($lang = Modules::load_file($_langfile, $path, 'lang')) {
+				if ($return) return $lang;
+				$this->language = array_merge($this->language, $lang);
+				$this->is_loaded[] = $langfile.'_lang'.EXT;
+				unset($lang);
+			}
+		}
 		
-		global $LANG, $CFG;
-		
-		/* re-assign language and config for modules */
-		if ( ! $LANG instanceof MX_Lang) $LANG = new MX_Lang;
-		if ( ! $CFG instanceof MX_Config) $CFG = new MX_Config;
+		return $this->language;
 	}
 }
-
-/* create the application object */
-new CI;

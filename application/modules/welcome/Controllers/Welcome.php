@@ -21,7 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->config('config'); $config =$this->config->item('gender'); print_r( $config);exit;
-		print_r($this->router->routes);exit;
+		//print_r($this->router->routes);exit;
 		$this->load->view('welcome_message'); 
 	}
 }

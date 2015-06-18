@@ -1,8 +1,7 @@
 <?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
-/* load MX core classes */
-require_once dirname(__FILE__).'/Lang.php';
-require_once dirname(__FILE__).'/Config.php';
+/** load the CI class for Modular Extensions **/
+require dirname(__FILE__).'/Base.php';
 
 /**
  * Modular Extensions - HMVC
@@ -11,12 +10,13 @@ require_once dirname(__FILE__).'/Config.php';
  * @link	http://codeigniter.com
  *
  * Description:
- * This library creates a CI class which allows the use of modules in an application.
+ * This library replaces the CodeIgniter Controller class
+ * and adds features allowing use of modules and the HMVC design pattern.
  *
- * Install this file as application/third_party/MX/Ci.php
+ * Install this file as application/third_party/MX/Controller.php
  *
- * @copyright	Copyright (c) 2015 Wiredesignz
- * @version 	5.5
+ * @copyright	Copyright (c) 2011 Wiredesignz
+ * @version 	5.4
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,22 +36,25 @@ require_once dirname(__FILE__).'/Config.php';
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  **/
-class CI
+class MX_Controller 
 {
-	public static $APP;
+	public $autoload = array();
 	
-	public function __construct() {
+	public function __construct() 
+	{
+		$class = str_replace(CI::$APP->config->item('controller_suffix'), '', get_class($this));
+		log_message('debug', $class." MX_Controller Initialized");
+		Modules::$registry[strtolower($class)] = $this;	
 		
-		/* assign the application instance */
-		self::$APP = CI_Controller::get_instance();
+		/* copy a loader instance and initialize */
+		$this->load = clone load_class('Loader');
+		$this->load->initialize($this);	
 		
-		global $LANG, $CFG;
-		
-		/* re-assign language and config for modules */
-		if ( ! $LANG instanceof MX_Lang) $LANG = new MX_Lang;
-		if ( ! $CFG instanceof MX_Config) $CFG = new MX_Config;
+		/* autoload module items */
+		$this->load->_autoloader($this->autoload);
+	}
+	
+	public function __get($class) {
+		return CI::$APP->$class;
 	}
 }
-
-/* create the application object */
-new CI;

@@ -11,12 +11,13 @@ require_once dirname(__FILE__).'/Config.php';
  * @link	http://codeigniter.com
  *
  * Description:
- * This library creates a CI class which allows the use of modules in an application.
+ * This library extends the CodeIgniter CI_Controller class and creates an application 
+ * object allowing use of the HMVC design pattern.
  *
- * Install this file as application/third_party/MX/Ci.php
+ * Install this file as application/third_party/MX/Base.php
  *
- * @copyright	Copyright (c) 2015 Wiredesignz
- * @version 	5.5
+ * @copyright	Copyright (c) 2011 Wiredesignz
+ * @version 	5.4
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -36,20 +37,22 @@ require_once dirname(__FILE__).'/Config.php';
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  **/
-class CI
+class CI extends CI_Controller
 {
 	public static $APP;
 	
 	public function __construct() {
 		
 		/* assign the application instance */
-		self::$APP = CI_Controller::get_instance();
+		self::$APP = $this;
 		
 		global $LANG, $CFG;
 		
 		/* re-assign language and config for modules */
-		if ( ! $LANG instanceof MX_Lang) $LANG = new MX_Lang;
-		if ( ! $CFG instanceof MX_Config) $CFG = new MX_Config;
+		if ( ! is_a($LANG, 'MX_Lang')) $LANG = new MX_Lang;
+		if ( ! is_a($CFG, 'MX_Config')) $CFG = new MX_Config;
+		
+		parent::__construct();
 	}
 }
 
