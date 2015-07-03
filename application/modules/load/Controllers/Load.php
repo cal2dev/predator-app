@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class OnBoard extends CI_Controller {
+class Load extends CI_Controller {
 
 	
 	public function __construct() {
@@ -13,20 +13,14 @@ class OnBoard extends CI_Controller {
 	}
 	public function index()
 	{
-		$this->load->view('onBoard'); 
+		$this->login(); 
 	}
-	function home() {
-		$this->load->view('html/home.html');
-	}
+	
 	function login() {
 		$this->load->view('html/loginUI.html');
 	}
-	
-	function contact() {
-		$this->load->view('html/contact.html');
+	function signup() {
+		$this->load->view('html/signup.html');
 	}
 	
-	function about() {
-		$this->load->view('html/about.html');
-	}
 }

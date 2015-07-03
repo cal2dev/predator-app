@@ -11,23 +11,23 @@ App.run(['$rootScope','ipCookie','$location',function($rootScope,ipCookie,$locat
 App.config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
     $routeProvider.when('/login', {
         controller: 'authController',
-        templateUrl: 'ng/onBoard/views/loginUI.html'
+        templateUrl: base_url+'load/login'
     })
     .when('/signup', {
         controller: 'signUpController',
-        templateUrl: 'ng/onBoard/views/signUpUI.html'
+        templateUrl: base_url+'load/signup'
     })
     .when('/home', {
         controller: '',
-        templateUrl: 'ng/onBoard/views/home.html'
+        templateUrl: base_url+'onBoard/home'
     })
     .when('/about', {
         controller: '',
-        templateUrl: 'ng/onBoard/views/about.html'
+        templateUrl: base_url+'onBoard/about'
     })
     .when('/contact', {
         controller: '',
-        templateUrl: base_url+'welcome'
+        templateUrl: base_url+'onBoard/contact'
     })
-    .otherwise({ redirectTo: '/login' });
+    .otherwise({ redirectTo: '/home' });
 }]);
