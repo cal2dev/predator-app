@@ -17,10 +17,10 @@ class Load extends CI_Controller {
 	}
 	
 	function login() {
-		$this->load->view('html/loginUI.html');
+		$this->load->view('html/login.php');
 	}
 	function signup() {
-		$this->load->view('html/signup.html');
+		$this->load->view('html/signup.php');
 	}
 	
 }

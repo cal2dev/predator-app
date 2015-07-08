@@ -10,7 +10,7 @@
 	<div class="row">
 	  	<div class="col-lg-6">
 	    	<div class="well bs-component">
-	      		<form class="form-horizontal" name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate>
+	      		<form class="form-horizontal" name="userForm" ng-submit="signup(userForm.$valid)" novalidate>
 	        		<fieldset>
 	                  <div class="form-group" ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
 	                    <label for="inputEmail" class="col-lg-2 control-label">First Name</label>
@@ -40,18 +40,20 @@
 	                  <div class="form-group" ng-class="{ 'has-error': userForm.password.$invalid && !userForm.password.$pristine}">
 	                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
 	                    <div class="col-lg-10">
-	                      <input type="password" class="form-control" name="password" data-ng-model="user.password" placeholder="Password" ng-required="true" ng-minlength="5" ng-maxlength="20">
+	                      <input type="password" class="form-control" name="password" data-ng-model="user.password" placeholder="Password" ng-required="true" ng-minlength="4" ng-maxlength="20" id="password">
 	                      	<p ng-show="userForm.password.$error.minlength" class="help-block">Too short.</p>
             				<p ng-show="userForm.password.$error.maxlength" class="help-block">Too long.</p>
             				<p ng-show="userForm.password.$error.required && !userForm.password.$pristine" class="help-block">This field is required.</p>
 	                    </div>
 	                  </div>
-	                  <div class="form-group">
-	                  	<label for="cat" class="col-lg-2 control-label">Select your field</label>
+	                  <div class="form-group" ng-class="{ 'has-error': userForm.confirmPassword.$invalid && !userForm.confirmPassword.$pristine}">
+	                  	<label for="cat" class="col-lg-2 control-label">Confirm Password</label>
 	                  	<div class="col-lg-10">
-		                  	<select class="form-control" name="category" data-ng-model="user.category">
-		                  		<option value="{{ category.id }}" ng-repeat="category in categories">{{ category.category_name }}</option>
-		                  	</select>
+	                      <input type="password" class="form-control" name="confirmPassword" data-ng-model="user.confirmPassword" placeholder="Confirm Password"  pw-check="password" ng-required="true" ng-minlength="4" ng-maxlength="20">
+	                      	<p ng-show="userForm.confirmPassword.$error.minlength" class="help-block">Too short.</p>
+            				<p ng-show="userForm.confirmPassword.$error.maxlength" class="help-block">Too long.</p>
+            				<p ng-show="userForm.confirmPassword.$error.required && !userForm.confirmPassword.$pristine" class="help-block">This field is required.</p>
+ 							<span class="msg-error" ng-show="userForm.confirmPassword.$error.pwmatch">    Passwords don't match.  </span>
 		                </div>
 	                  </div>
 	                  <div class="form-group">

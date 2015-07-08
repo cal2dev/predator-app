@@ -5,7 +5,7 @@ App.controller('authController', ['$scope','$rootScope','dataFactory','$location
 	$scope.pageClass = 'page-home';
 	$rootScope.rightmenu = [];
 	/** Submitting signup form */
-	$scope.login = function(isValid) {
+	$scope.login = function(isValid) {alert('herew');
 		if(isValid) {
 			var loginCredentials = {
                 "email" : $scope.login.email,
