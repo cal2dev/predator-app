@@ -8,26 +8,28 @@ App.run(['$rootScope','ipCookie','$location',function($rootScope,ipCookie,$locat
 
 }]);
 
-App.config(['$routeProvider', '$locationProvider',function($routeProvider,$locationProvider) {
+App.config(['$routeProvider', '$locationProvider','$httpProvider',function($routeProvider,$locationProvider,$httpProvider) {
+	$httpProvider.defaults.headers.common['App-key'] = APPKEY;
+	//$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     $routeProvider.when('/login', {
         controller: 'authController',
-        templateUrl: base_url+'load/login'
+        templateUrl: BASE_URL+'load/login'
     })
     .when('/signup', {
         controller: 'signUpController',
-        templateUrl: base_url+'load/signup'
+        templateUrl: BASE_URL+'load/signup'
     })
     .when('/home', {
         controller: '',
-        templateUrl: base_url+'onBoard/home'
+        templateUrl: BASE_URL+'onBoard/home'
     })
     .when('/about', {
         controller: '',
-        templateUrl: base_url+'onBoard/about'
+        templateUrl: BASE_URL+'onBoard/about'
     })
     .when('/contact', {
         controller: '',
-        templateUrl: base_url+'onBoard/contact'
+        templateUrl: BASE_URL+'onBoard/contact'
     })
     .otherwise({ redirectTo: '/home' });
 }]);

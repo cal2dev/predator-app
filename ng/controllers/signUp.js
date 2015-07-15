@@ -9,16 +9,18 @@ App.controller('signUpController', ['$scope','$rootScope','dataFactory','$locati
 		if(isValid) {
 			var loginCredentials = {
                 "email" : $scope.user.email,
-                "password" : $scope.user.password
+                "password" : $scope.user.password,
+                "firstName" : $scope.user.firstName,
+                "lastName" : $scope.user.lastName
             };
-			console.log(loginCredentials);
-            dataFactory.validateLogin(loginCredentials)
+			//console.log(loginCredentials);
+            dataFactory.signUp(loginCredentials)
                 .success(function (response,status) {
                 	var emailText = 'Email: '+response.email;
-                	console.log(emailText);
+                	//console.log(emailText);
                 	var passwordText = 'Password: '+response.password;
-                	console.log(passwordText);
-                	$location.path("about");
+                	//console.log(passwordText);
+                //	$location.path("about");
                 })
                 .error(function(error,status) {
 

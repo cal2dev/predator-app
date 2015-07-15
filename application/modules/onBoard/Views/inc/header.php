@@ -44,6 +44,7 @@
     <![endif]-->
 
     <script type="text/javascript">
-	var base_url='<?php echo base_url(); //$this -> router -> fetch_module() ?>';
+	var BASE_URL='<?php echo base_url(); //$this -> router -> fetch_module() ?>';
+	var APPKEY='123456';
     </script>
 </head>

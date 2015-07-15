@@ -3,17 +3,28 @@ App.factory('dataFactory', ['$http', function($http) {
     var urlBase = 'api/';
     
     var dataFactory = {};
-
+    var config_post = {headers:  {
+        'App-key': APPKEY,
+        'Content-Type': 'application/json'
+    }};
     /*-------------------------------*
     | Login / Sign Up Module
     *--------------------------------*/
 
     dataFactory.validateLogin = function (loginCredentials) {
-        return $http.post(urlBase+'login', loginCredentials);
+        return $http.post(urlBase+'login', loginCredentials,config_post);
     };
 
     dataFactory.signUp = function (signUpdata) {
-        return $http.post(urlBase+'signup', signUpdata);
+    	//console.log(signUpdata);
+        return $http.post('load/signup/', signUpdata,config_post);
+     //If required to send data as post use below code
+        /*return $http({
+            method: 'POST',
+            url: 'load/signup/',
+            data: $.param({data: signUpdata}),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','App-key': APPKEY}
+        });*/
     };
 
     dataFactory.doLogOut = function () {

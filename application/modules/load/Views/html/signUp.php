@@ -10,12 +10,12 @@
 	<div class="row">
 	  	<div class="col-lg-6">
 	    	<div class="well bs-component">
-	      		<form class="form-horizontal" name="userForm" ng-submit="signup(userForm.$valid)" novalidate>
+	      		<form class="form-horizontal" name="userForm" ng-submit="signup(userForm.$valid)" enctype="application/x-www-form-urlencoded" novalidate>
 	        		<fieldset>
 	                  <div class="form-group" ng-class="{ 'has-error' : userForm.firstName.$invalid && !userForm.firstName.$pristine }">
 	                    <label for="inputEmail" class="col-lg-2 control-label">First Name</label>
 	                    <div class="col-lg-10">
-	                      	<input type="text" class="form-control" name="firstName" data-ng-model="user.first" placeholder="First name" ng-required="true" ng-minlength="3" ng-maxlength="10">
+	                      	<input type="text" class="form-control" name="firstName" data-ng-model="user.firstName" placeholder="First name" ng-required="true" ng-minlength="3" ng-maxlength="10">
 	                      	<p ng-show="userForm.firstName.$error.required && !userForm.firstName.$pristine" class="help-block">This field is required.</p>
 	                      	<p ng-show="userForm.firstName.$error.minlength" class="help-block">Too short.</p>
             				<p ng-show="userForm.firstName.$error.maxlength" class="help-block">Too long.</p>
@@ -24,7 +24,7 @@
 	                  <div class="form-group" ng-class="{ 'has-error' : userForm.lastName.$invalid && !userForm.lastName.$pristine }">
 	                    <label for="inputEmail" class="col-lg-2 control-label">Last Name</label>
 	                    <div class="col-lg-10">
-	                      <input type="text" class="form-control" name="lastName" data-ng-model="user.last" placeholder="Last name" ng-required="true" ng-minlength="3" ng-maxlength="10">
+	                      <input type="text" class="form-control" name="lastName" data-ng-model="user.lastName" placeholder="Last name" ng-required="true" ng-minlength="3" ng-maxlength="10">
 	                      <p ng-show="userForm.lastName.$error.required && !userForm.lastName.$pristine" class="help-block">This field is required.</p>
 	                      	<p ng-show="userForm.lastName.$error.minlength" class="help-block">Too short.</p>
             				<p ng-show="userForm.lastName.$error.maxlength" class="help-block">Too long.</p>
