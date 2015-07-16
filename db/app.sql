@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 15, 2015 at 03:28 PM
+-- Generation Time: Jul 16, 2015 at 03:44 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `app_rest_logs` (
   `rtime` float DEFAULT NULL,
   `authorized` varchar(1) NOT NULL,
   `response_code` smallint(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `app_rest_logs`
@@ -179,7 +179,103 @@ INSERT INTO `app_rest_logs` (`id`, `uri`, `method`, `params`, `api_key`, `ip_add
 (111, 'load/signup', 'post', 'a:3:{s:94:"{"data":{"email":"dev_here2@gmail_com","password":"gggg","firstName":"ggg","lastName":"gggg"}}";s:0:"";i:0;s:0:"";i:1;s:0:"";}', '123456', '127.0.0.1', '2015-07-15 13:16:02', 0.122007, '1', 0),
 (112, 'load/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-15 13:18:31', 0.103006, '1', 0),
 (113, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-15 13:18:43', 0.060003, '1', 0),
-(114, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-15 13:24:56', 0.057004, '1', 0);
+(114, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-15 13:24:56', 0.057004, '1', 0),
+(115, 'load/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-16 07:38:29', 0.304008, '1', 0),
+(116, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:40:26', 0.093003, '1', 0),
+(117, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:41:21', 0.0660012, '1', 0),
+(118, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:41:46', 0.0970008, '1', 0),
+(119, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:42:17', 0.222004, '1', 0),
+(120, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:44:06', 0.0740011, '1', 0),
+(121, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:47:40', 0.094002, '1', 0),
+(122, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:47:43', 0.0799999, '1', 0),
+(123, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 07:47:56', 0.043, '1', 0),
+(124, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:13:20', 0.086005, '1', 0),
+(125, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:15:15', 0.409023, '1', 0),
+(126, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:36:10', 0.0599999, '1', 0),
+(127, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:36:24', 0.137005, '1', 0),
+(128, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:36:50', 0.0640011, '1', 0),
+(129, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:38:02', 0.0550001, '1', 0),
+(130, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:42:19', 0.071003, '1', 0),
+(131, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:42:30', 0.0730011, '1', 0),
+(132, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:49:40', NULL, '1', 0),
+(133, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 08:52:30', 0.110001, '1', 0),
+(134, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:00:31', 0.126007, '1', 0),
+(135, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:01:24', 0.0599999, '1', 0),
+(136, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:07:35', 0.0640011, '1', 0),
+(137, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:41:36', 0.0860031, '1', 0),
+(138, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:42:22', 0.105001, '1', 0),
+(139, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 09:57:59', 0.0510011, '1', 0),
+(140, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:03:37', 0.0910008, '1', 0),
+(141, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:03:54', 0.059001, '1', 0),
+(142, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:05:44', 0.0410001, '1', 0),
+(143, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:19:14', NULL, '1', 0),
+(144, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:20:47', 0.078001, '1', 0),
+(145, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:21:28', 0.0670011, '1', 0),
+(146, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:22:41', 0.0940049, '1', 0),
+(147, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:24:05', 0.0950041, '1', 0),
+(148, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:24:11', 0.356003, '1', 0),
+(149, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:25:23', 0.1, '1', 0),
+(150, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:28:39', 0.0690041, '1', 0),
+(151, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:29:16', 0.0890028, '1', 0),
+(152, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:29:29', 0.131004, '1', 0),
+(153, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:32:26', 0.226008, '1', 0),
+(154, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:39:28', 0.0699999, '1', 0),
+(155, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:40:11', 0.0999999, '1', 0),
+(156, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:40:52', 0.052002, '1', 0),
+(157, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:43:59', 0.0799999, '1', 0),
+(158, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 10:58:33', 0.110003, '1', 0),
+(159, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:00:06', 0.0600021, '1', 0),
+(160, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:02:06', 0.201003, '1', 0),
+(161, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:02:26', 0.0760009, '1', 0),
+(162, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:04:05', NULL, '1', 0),
+(163, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:05:27', 0.0560031, '1', 0),
+(164, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:05:53', 0.0609999, '1', 0),
+(165, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:06:08', NULL, '1', 0),
+(166, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:09:49', NULL, '1', 0),
+(167, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:12:37', NULL, '1', 0),
+(168, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:13:13', 0.0680039, '1', 0),
+(169, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:13:21', 0.065001, '1', 0),
+(170, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:13:49', 0.101, '1', 0),
+(171, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:15:22', NULL, '1', 0),
+(172, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:18:38', NULL, '1', 0),
+(173, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:30:50', NULL, '1', 0),
+(174, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:31:12', NULL, '1', 0),
+(175, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:34:36', NULL, '1', 0),
+(176, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:35:13', NULL, '1', 0),
+(177, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:35:38', 0.0440001, '1', 0),
+(178, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:35:59', NULL, '1', 0),
+(179, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:38:00', 0.04, '1', 0),
+(180, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:40:59', 0.0630021, '1', 0),
+(181, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:43:57', 0.162005, '1', 0),
+(182, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:45:04', 0.0660009, '1', 0),
+(183, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:45:38', 0.062, '1', 0),
+(184, 'load/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"wwww";s:9:"firstName";s:4:"1222";s:8:"lastName";s:5:"wewew";}', '123456', '127.0.0.1', '2015-07-16 11:47:25', 0.05, '1', 0),
+(185, 'start/signup', 'get', NULL, '', '127.0.0.1', '2015-07-16 11:55:33', 0.195011, '0', 403),
+(186, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-16 11:55:39', 0.096005, '1', 0),
+(187, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 11:55:54', 0.051003, '1', 0),
+(188, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 11:56:55', 0.116003, '1', 0),
+(189, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:00:46', 0.038002, '1', 0),
+(190, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:04:49', 0.0560009, '1', 0),
+(191, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:05:04', 0.05, '1', 0),
+(192, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:09:10', 0.062001, '1', 0),
+(193, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:19:05', 0.196006, '1', 0),
+(194, 'start/signup', 'get', NULL, '', '127.0.0.1', '2015-07-16 12:24:00', 0.133007, '0', 403),
+(195, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:25:39', 0.045001, '1', 0),
+(196, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:25:55', 0.0599999, '1', 0),
+(197, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:34:29', 0.05, '1', 0),
+(198, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:39:32', 0.116005, '1', 0),
+(199, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:41:36', 0.068002, '1', 0),
+(200, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:41:45', 0.0820019, '1', 0),
+(201, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:41:59', 0.0830019, '1', 0),
+(202, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:45:35', 0.0910008, '1', 0),
+(203, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 12:45:46', 0.0840008, '1', 0),
+(204, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 13:04:23', NULL, '1', 0),
+(205, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 13:05:35', 0.164002, '1', 0),
+(206, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:7:"sasasas";s:8:"lastName";s:7:"assasas";}', '123456', '127.0.0.1', '2015-07-16 13:13:36', 0.330007, '1', 0),
+(207, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-16 13:13:52', 0.136002, '1', 0),
+(208, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:14:07', 0.144006, '1', 0),
+(209, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:14:57', 0.0870011, '1', 0),
+(210, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:15:07', 0.0900011, '1', 0);
 
 -- --------------------------------------------------------
 
@@ -248,7 +344,14 @@ CREATE TABLE IF NOT EXISTS `app_user_register` (
   `userReg_unlogincount` int(20) NOT NULL,
   `userReg_cstamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `userReg_ustamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `app_user_register`
+--
+
+INSERT INTO `app_user_register` (`userReg_id`, `userReg_unique_id`, `userReg_recordHash`, `userReg_user_name`, `userReg_email_id`, `userReg_password`, `userReg_status`, `userReg_unlogincount`, `userReg_cstamp`, `userReg_ustamp`) VALUES
+(1, 'qw', 'sas', 'asas', 'asas', 'asasas', 0, 0, '2015-07-16 03:23:18', '2015-07-16 03:23:18');
 
 --
 -- Indexes for dumped tables
@@ -273,6 +376,12 @@ ALTER TABLE `app_table_alias`
   ADD PRIMARY KEY (`tbAlias`);
 
 --
+-- Indexes for table `app_user_register`
+--
+ALTER TABLE `app_user_register`
+  ADD PRIMARY KEY (`userReg_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -285,12 +394,17 @@ ALTER TABLE `app_rest_keys`
 -- AUTO_INCREMENT for table `app_rest_logs`
 --
 ALTER TABLE `app_rest_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=211;
 --
 -- AUTO_INCREMENT for table `app_table_alias`
 --
 ALTER TABLE `app_table_alias`
   MODIFY `tbAlias` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `app_user_register`
+--
+ALTER TABLE `app_user_register`
+  MODIFY `userReg_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

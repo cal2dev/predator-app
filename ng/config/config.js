@@ -13,11 +13,11 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
 	//$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     $routeProvider.when('/login', {
         controller: 'authController',
-        templateUrl: BASE_URL+'load/login'
+        templateUrl: BASE_URL+'start/login'
     })
     .when('/signup', {
         controller: 'signUpController',
-        templateUrl: BASE_URL+'load/signup'
+        templateUrl: BASE_URL+'start/signup'
     })
     .when('/home', {
         controller: '',

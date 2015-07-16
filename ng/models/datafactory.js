@@ -17,11 +17,11 @@ App.factory('dataFactory', ['$http', function($http) {
 
     dataFactory.signUp = function (signUpdata) {
     	//console.log(signUpdata);
-        return $http.post('load/signup/', signUpdata,config_post);
+        return $http.post('start/signup/', signUpdata,config_post);
      //If required to send data as post use below code
         /*return $http({
             method: 'POST',
-            url: 'load/signup/',
+            url: 'start/signup/',
             data: $.param({data: signUpdata}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','App-key': APPKEY}
         });*/
