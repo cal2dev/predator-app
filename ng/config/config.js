@@ -1,5 +1,5 @@
 /** APP MODULE INIT */
-var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate']);
+var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate','ui-notification']);
 
 /** APP RUNTIME CONFIG */
 App.run(['$rootScope','ipCookie','$location',function($rootScope,ipCookie,$location){

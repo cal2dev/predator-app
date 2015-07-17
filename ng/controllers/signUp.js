@@ -1,4 +1,4 @@
-App.controller('signUpController', ['$scope','$rootScope','dataFactory','$location','$cookieStore','ipCookie', function($scope,$rootScope,dataFactory,$location,$cookieStore,ipCookie){
+App.controller('signUpController', ['$scope','$rootScope','dataFactory','$location','$cookieStore','ipCookie','Notification', function($scope,$rootScope,dataFactory,$location,$cookieStore,ipCookie,Notification){
 	if(ipCookie('cookie_login')){
 		$location.path("dashboard");
 	}
@@ -22,9 +22,12 @@ App.controller('signUpController', ['$scope','$rootScope','dataFactory','$locati
                 	//console.log(passwordText);
                 //	$location.path("about");
                 })
-                .error(function(error,status) {
-
-                	showMessage("msg","danger",error.message+" Error Code "+status+".");
+                .error(function(report,status) {
+                	console.log('in error'); 
+                	 Notification.error({message: 'Error notification 1s', delay: 1000});
+                	console.log(report);
+					//console.log(status);
+                	showMessage("msg","danger",report.error+" Error Code "+status+".");
                 });
 		}else{
 			alert('Bad');

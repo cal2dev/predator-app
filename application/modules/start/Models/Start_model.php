@@ -7,9 +7,9 @@ class Start_model extends CI_Model  {
    
   
    public function test($tb){
-      /* $query= $this->db->get($tb);
+       $query= $this->db->get($tb);
       $row=$query->result_array();
-      return $row; */
+      return $row; 
        
    }
 
