@@ -23,11 +23,13 @@ App.controller('signUpController', ['$scope','$rootScope','dataFactory','$locati
                 //	$location.path("about");
                 })
                 .error(function(report,status) {
-                	console.log('in error'); 
-                	 Notification.error({message: 'Error notification 1s', delay: 1000});
                 	console.log(report);
+                	var msg=getHtmlMessage(report.message);
+                	//Notification.error({message: 'Error notification 1s', delay: 5000});
+                	Notification.error({message: msg, title: '<i>OOps!! Somethng Went Wrong </i>', delay: 10000});
+                	console.log();
 					//console.log(status);
-                	showMessage("msg","danger",report.error+" Error Code "+status+".");
+                //	showMessage("msg","danger",report.error+" Error Code "+status+".");
                 });
 		}else{
 			alert('Bad');

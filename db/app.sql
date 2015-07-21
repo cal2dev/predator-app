@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2015 at 03:44 PM
+-- Generation Time: Jul 21, 2015 at 03:49 PM
 -- Server version: 5.6.24
 -- PHP Version: 5.6.8
 
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `app_rest_logs` (
   `rtime` float DEFAULT NULL,
   `authorized` varchar(1) NOT NULL,
   `response_code` smallint(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=211 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=348 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `app_rest_logs`
@@ -275,7 +275,145 @@ INSERT INTO `app_rest_logs` (`id`, `uri`, `method`, `params`, `api_key`, `ip_add
 (207, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-16 13:13:52', 0.136002, '1', 0),
 (208, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:14:07', 0.144006, '1', 0),
 (209, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:14:57', 0.0870011, '1', 0),
-(210, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:15:07', 0.0900011, '1', 0);
+(210, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"pppp";s:9:"firstName";s:3:"opp";s:8:"lastName";s:5:"opopo";}', '123456', '127.0.0.1', '2015-07-16 13:15:07', 0.0900011, '1', 0),
+(211, 'start/login', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 07:44:47', 0.352001, '1', 0),
+(212, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 07:44:48', 0.253007, '1', 0),
+(213, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 07:45:04', 0.205005, '1', 0),
+(214, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:11:24', 0.139005, '1', 0),
+(215, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:12:43', 0.084002, '1', 0),
+(216, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:17:27', 0.0500021, '1', 0),
+(217, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:17:41', 0.0500002, '1', 0),
+(218, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:18:17', 0.0660009, '1', 0),
+(219, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:18:23', 0.0930009, '1', 0),
+(220, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:18:33', 0.0560009, '1', 0),
+(221, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 08:18:44', 0.200002, '1', 0),
+(222, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 09:12:38', 0.078001, '1', 0),
+(223, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 09:27:41', 0.0970011, '1', 0),
+(224, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:04:30', 0.062, '1', 0),
+(225, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:05:50', 0.0980022, '1', 0),
+(226, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:14:04', 0.186009, '1', 0),
+(227, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:14:25', 0.0699999, '1', 0),
+(228, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:16:01', 0.073004, '1', 0),
+(229, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:5:"ddddd";s:8:"lastName";s:6:"dddddd";}', '123456', '127.0.0.1', '2015-07-17 10:19:19', 0.166001, '1', 400),
+(230, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 10:20:10', 0.477027, '1', 0),
+(231, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 10:20:28', 0.0840039, '1', 0),
+(232, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 10:20:46', 0.0920019, '1', 400),
+(233, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 10:27:23', NULL, '1', 0),
+(234, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 10:27:57', NULL, '1', 0),
+(235, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 10:58:26', 0.207004, '1', 400),
+(236, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 11:00:54', 0.124001, '1', 400),
+(237, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 11:02:18', 0.108002, '1', 400),
+(238, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 11:04:57', NULL, '1', 0),
+(239, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 11:05:22', NULL, '1', 0),
+(240, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 11:17:29', 0.107006, '1', 400),
+(241, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 11:28:48', 0.384017, '1', 0),
+(242, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"asas";}', '123456', '127.0.0.1', '2015-07-17 11:29:04', 0.112004, '1', 400),
+(243, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"asas";}', '123456', '127.0.0.1', '2015-07-17 11:29:10', 0.168003, '1', 400),
+(244, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"asas";}', '123456', '127.0.0.1', '2015-07-17 11:38:29', 0.095, '1', 400),
+(245, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:5:"sssss";s:8:"lastName";s:4:"asas";}', '123456', '127.0.0.1', '2015-07-17 11:40:25', 0.208001, '1', 400),
+(246, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 11:40:29', 0.380007, '1', 0),
+(247, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:4:"sddd";}', '123456', '127.0.0.1', '2015-07-17 11:40:52', 0.380009, '1', 400),
+(248, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 11:43:06', 0.482013, '1', 0),
+(249, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 11:43:27', 0.085005, '1', 400),
+(250, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 11:44:14', 0.0910001, '1', 200),
+(251, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 11:44:37', 0.05, '1', 0),
+(252, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 12:08:05', 1.15701, '1', 0),
+(253, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 12:08:06', 0.91001, '1', 0),
+(254, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 12:09:00', 0.151, '1', 0),
+(255, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 12:09:19', 0.238005, '1', 0),
+(256, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:09:31', 0.066004, '1', 0),
+(257, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:10:59', 0.091002, '1', 0),
+(258, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:11:13', 0.125001, '1', 400),
+(259, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:11:38', 0.12, '1', 400),
+(260, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:11:40', 0.0900002, '1', 400),
+(261, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:26:00', 0.193001, '1', 400),
+(262, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:26:05', 0.405003, '1', 400),
+(263, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"eeee";s:9:"firstName";s:3:"eee";s:8:"lastName";s:5:"eeeee";}', '123456', '127.0.0.1', '2015-07-17 12:26:40', 0.152001, '1', 400),
+(264, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 12:28:00', 0.149008, '1', 0),
+(265, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-17 12:28:13', 0.117005, '1', 400),
+(266, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-17 12:28:27', 0.11, '1', 400),
+(267, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 12:29:08', 0.355008, '1', 0);
+INSERT INTO `app_rest_logs` (`id`, `uri`, `method`, `params`, `api_key`, `ip_address`, `time`, `rtime`, `authorized`, `response_code`) VALUES
+(268, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:5:"ddddd";}', '123456', '127.0.0.1', '2015-07-17 12:29:37', 0.118006, '1', 400),
+(269, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 12:30:11', 0.483012, '1', 0),
+(270, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-17 12:30:26', 0.177007, '1', 400),
+(271, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:02:10', 1.04204, '1', 0),
+(272, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:08:17', 0.226012, '1', 0),
+(273, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:10:37', 0.179008, '1', 0),
+(274, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:10:52', 0.0750041, '1', 0),
+(275, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:11:11', 0.158009, '1', 0),
+(276, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:11:36', 0.106006, '1', 0),
+(277, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:27:43', 0.0940051, '1', 0),
+(278, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:32:59', 0.089005, '1', 0),
+(279, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:33:21', 0.101006, '1', 0),
+(280, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:42:36', 0.207012, '1', 0),
+(281, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:46:08', 0.203012, '1', 0),
+(282, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:46:27', 0.256014, '1', 0),
+(283, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:3:"sss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 13:46:48', 0.202012, '1', 400),
+(284, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:47:46', 0.210012, '1', 0),
+(285, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 13:47:58', 0.127007, '1', 400),
+(286, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 13:53:20', 0.603035, '1', 0),
+(287, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 14:00:57', 0.290016, '1', 0),
+(288, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:3:"sss";s:8:"lastName";s:3:"sss";}', '123456', '127.0.0.1', '2015-07-17 14:01:09', 0.119007, '1', 400),
+(289, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-17 14:03:23', 0.171009, '1', 0),
+(290, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 14:03:35', 0.150009, '1', 400),
+(291, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:4:"ssss";}', '123456', '127.0.0.1', '2015-07-17 14:03:39', 0.139008, '1', 400),
+(292, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 06:32:28', 0.499004, '1', 0),
+(293, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"aaaa";s:9:"firstName";s:3:"dev";s:8:"lastName";s:5:"singh";}', '123456', '127.0.0.1', '2015-07-20 06:34:13', 0.219006, '1', 400),
+(294, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 06:34:40', 0.079004, '1', 0),
+(295, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"sdsd";}', '123456', '127.0.0.1', '2015-07-20 06:34:54', 0.100006, '1', 400),
+(296, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"sdsd";}', '123456', '127.0.0.1', '2015-07-20 07:14:33', 0.0900011, '1', 400),
+(297, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"sdsd";}', '123456', '127.0.0.1', '2015-07-20 07:14:37', 0.127001, '1', 400),
+(298, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 07:49:00', 0.373013, '1', 0),
+(299, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 07:49:16', 0.138004, '1', 400),
+(300, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 07:50:08', 0.100002, '1', 400),
+(301, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 07:51:24', 0.315012, '1', 0),
+(302, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 07:51:36', 0.123005, '1', 400),
+(303, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 07:52:12', 0.160003, '1', 400),
+(304, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 07:52:44', 0.13, '1', 400),
+(305, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 07:52:46', 0.20701, '1', 0),
+(306, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:3:"sss";s:8:"lastName";s:3:"sss";}', '123456', '127.0.0.1', '2015-07-20 07:52:56', 0.102006, '1', 400),
+(307, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 07:55:40', 0.108006, '1', 0),
+(308, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:3:"ddd";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-20 07:55:50', 0.181008, '1', 400),
+(309, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-20 08:00:21', 0.368011, '1', 0),
+(310, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 08:00:33', 0.115006, '1', 400),
+(311, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 08:16:20', 0.140001, '1', 400),
+(312, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"dddd";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 08:53:14', 0.133, '1', 400),
+(313, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 08:54:00', 0.0720031, '1', 0),
+(314, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 09:53:20', 0.157005, '1', 0),
+(315, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:13:04', 0.117006, '1', 0),
+(316, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:45:12', 0.290006, '1', 0),
+(317, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:45:34', 0.075, '1', 0),
+(318, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:45:44', 0.102002, '1', 0),
+(319, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:47:04', 0.141005, '1', 0),
+(320, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 10:47:16', 0.0830009, '1', 400),
+(321, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"dddds";s:9:"firstName";s:4:"dddd";s:8:"lastName";s:4:"dddd";}', '123456', '127.0.0.1', '2015-07-20 11:14:34', 0.122003, '1', 0),
+(322, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-21 11:08:22', 0.989011, '1', 0),
+(323, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-21 11:09:29', 0.250011, '1', 400),
+(324, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-21 11:35:47', 0.05, '1', 0),
+(325, 'start/signup', 'post', 'a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"ddd";}', '123456', '127.0.0.1', '2015-07-21 11:36:42', 0.04, '1', 0),
+(326, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-21 11:37:39', 0.331012, '1', 0),
+(327, 'start/signup', 'post', 'a:3:{s:84:"{"email":"dev_here2@gmail_com","password":"dddd","firstName":"ddd","lastName":"ddd"}";s:0:"";i:0;s:0:"";i:1;s:0:"";}', '123456', '127.0.0.1', '2015-07-21 11:37:55', 0.067004, '1', 0),
+(328, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-21 11:44:11', 0.083005, '1', 0),
+(329, 'start/signup', 'post', 'a:3:{s:85:"{"email":"dev_here2@gmail_com","password":"dddd","firstName":"ddd","lastName":"dddd"}";s:0:"";i:0;s:0:"";i:1;s:0:"";}', '123456', '127.0.0.1', '2015-07-21 11:44:26', 0.0710039, '1', 0),
+(330, 'start/signup', 'get', NULL, '123456', '127.0.0.1', '2015-07-21 11:44:44', 0.066004, '1', 0),
+(331, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 11:44:54', 0.0550039, '1', 0),
+(332, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 11:47:24', 0.174, '1', 0),
+(333, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:4:"ssss";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 11:54:24', 0.138008, '1', 400),
+(334, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 11:58:46', 0.078001, '1', 400),
+(335, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 11:59:09', 0.145001, '1', 0),
+(336, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:05:00', 0.12, '1', 400),
+(337, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:05:50', 0.123, '1', 0),
+(338, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:06:50', 0.100003, '1', 0),
+(339, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:07:27', 0.0760021, '1', 0),
+(340, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:11:14', 0.0970032, '1', 0),
+(341, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:11:25', 0.092001, '1', 0),
+(342, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:12:24', 0.102001, '1', 0),
+(343, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:12:50', 0.156007, '1', 0),
+(344, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:19:12', 0.135002, '1', 0),
+(345, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:19:26', 0.0899999, '1', 0),
+(346, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:20:00', 0.100001, '1', 0),
+(347, 'start/signup', 'post', 'a:1:{s:4:"data";a:4:{s:5:"email";s:19:"dev.here2@gmail.com";s:8:"password";s:5:"ssssd";s:9:"firstName";s:4:"ssss";s:8:"lastName";s:3:"sss";}}', '123456', '127.0.0.1', '2015-07-21 12:20:26', 0.0990021, '1', 0);
 
 -- --------------------------------------------------------
 
@@ -307,8 +445,7 @@ INSERT INTO `app_table_alias` (`tbAlias`, `tbAlias_name`, `tbAlias_alias`, `tbAl
 --
 
 CREATE TABLE IF NOT EXISTS `app_user_data` (
-  `userData_id` int(250) NOT NULL,
-  `userReg_id` int(250) NOT NULL,
+  `userData_id` int(11) NOT NULL,
   `userReg_recordHash` varchar(500) NOT NULL,
   `userReg_unique_id` varchar(500) NOT NULL,
   `userReg_user_name` varchar(500) NOT NULL,
@@ -324,8 +461,17 @@ CREATE TABLE IF NOT EXISTS `app_user_data` (
   `userData_relationship` varchar(100) NOT NULL,
   `userData_timezone` varchar(100) NOT NULL,
   `userReg_cstamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `userReg_ustamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `userReg_ustamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `userReg_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `app_user_data`
+--
+
+INSERT INTO `app_user_data` (`userData_id`, `userReg_recordHash`, `userReg_unique_id`, `userReg_user_name`, `userReg_email_id`, `userReg_password`, `userData_firstname`, `userData_lastname`, `userData_image`, `userData_gender`, `userData_birthday`, `userData_location`, `userData_hometown`, `userData_relationship`, `userData_timezone`, `userReg_cstamp`, `userReg_ustamp`, `userReg_id`) VALUES
+(2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2015-07-21 13:39:38', '2015-07-21 13:39:38', 1),
+(3, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2015-07-21 13:40:26', '2015-07-21 13:40:26', 1);
 
 -- --------------------------------------------------------
 
@@ -340,18 +486,22 @@ CREATE TABLE IF NOT EXISTS `app_user_register` (
   `userReg_user_name` varchar(500) NOT NULL,
   `userReg_email_id` varchar(500) NOT NULL,
   `userReg_password` varchar(500) NOT NULL,
-  `userReg_status` int(10) NOT NULL,
+  `userReg_firstname` varchar(100) NOT NULL,
+  `userReg_lastname` varchar(100) NOT NULL,
+  `userReg_active` tinyint(1) NOT NULL DEFAULT '0',
+  `userReg_status` int(10) NOT NULL DEFAULT '0',
   `userReg_unlogincount` int(20) NOT NULL,
+  `userReg_now` varchar(100) NOT NULL,
   `userReg_cstamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `userReg_ustamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `app_user_register`
 --
 
-INSERT INTO `app_user_register` (`userReg_id`, `userReg_unique_id`, `userReg_recordHash`, `userReg_user_name`, `userReg_email_id`, `userReg_password`, `userReg_status`, `userReg_unlogincount`, `userReg_cstamp`, `userReg_ustamp`) VALUES
-(1, 'qw', 'sas', 'asas', 'asas', 'asasas', 0, 0, '2015-07-16 03:23:18', '2015-07-16 03:23:18');
+INSERT INTO `app_user_register` (`userReg_id`, `userReg_unique_id`, `userReg_recordHash`, `userReg_user_name`, `userReg_email_id`, `userReg_password`, `userReg_firstname`, `userReg_lastname`, `userReg_active`, `userReg_status`, `userReg_unlogincount`, `userReg_now`, `userReg_cstamp`, `userReg_ustamp`) VALUES
+(1, '', 'sas', 'asas', 'dev.here2@gmail.com1', 'asasas', '', '', 1, 0, 0, '', '2015-07-16 03:23:18', '2015-07-20 12:14:03');
 
 --
 -- Indexes for dumped tables
@@ -376,6 +526,12 @@ ALTER TABLE `app_table_alias`
   ADD PRIMARY KEY (`tbAlias`);
 
 --
+-- Indexes for table `app_user_data`
+--
+ALTER TABLE `app_user_data`
+  ADD PRIMARY KEY (`userData_id`);
+
+--
 -- Indexes for table `app_user_register`
 --
 ALTER TABLE `app_user_register`
@@ -394,17 +550,22 @@ ALTER TABLE `app_rest_keys`
 -- AUTO_INCREMENT for table `app_rest_logs`
 --
 ALTER TABLE `app_rest_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=211;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=348;
 --
 -- AUTO_INCREMENT for table `app_table_alias`
 --
 ALTER TABLE `app_table_alias`
   MODIFY `tbAlias` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `app_user_data`
+--
+ALTER TABLE `app_user_data`
+  MODIFY `userData_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `app_user_register`
 --
 ALTER TABLE `app_user_register`
-  MODIFY `userReg_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `userReg_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

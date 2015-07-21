@@ -6,3 +6,9 @@
 		$this->response($message, $code); // 200 being the HTTP response code for success
 	}
 } */
+if(!function_exists('dev_escape'))
+{
+	function dev_escape($arr) {
+		
+	}
+}

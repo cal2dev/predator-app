@@ -1,0 +1,24 @@
+DROP TRIGGER IF EXISTS insert_userData;
+DELIMITER $$ 
+CREATE TRIGGER insert_userData AFTER INSERT 
+      ON app_user_register
+      FOR EACH ROW   BEGIN     
+INSERT   INTO
+      app_user_data
+      (userReg_id, userReg_recordHash, userReg_unique_id,userReg_user_name,userReg_email_id,userReg_password,userData_firstname,userData_lastname)   
+	SELECT
+         userReg_id,
+         userReg_recordHash,
+         userReg_unique_id,
+         userReg_user_name,
+         userReg_email_id,
+         userReg_password,
+         userReg_firstname,
+         userReg_lastname   
+      FROM
+         app_user_register   
+      WHERE
+         userReg_id = NEW.userReg_id;
+END
+$$
+DELIMITER ;

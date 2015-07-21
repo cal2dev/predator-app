@@ -5,7 +5,8 @@ App.factory('dataFactory', ['$http', function($http) {
     var dataFactory = {};
     var config_post = {headers:  {
         'App-key': APPKEY,
-        'Content-Type': 'application/json'
+    //    'Content-Type': 'application/json'
+        'Content-Type': 'application/x-www-form-urlencoded'
     }};
     /*-------------------------------*
     | Login / Sign Up Module
@@ -17,14 +18,14 @@ App.factory('dataFactory', ['$http', function($http) {
 
     dataFactory.signUp = function (signUpdata) {
     	//console.log(signUpdata);
-        return $http.post('start/signup/', signUpdata,config_post);
+     //   return $http.post('start/signup/', signUpdata,config_post);
      //If required to send data as post use below code
-        /*return $http({
+       return $http({
             method: 'POST',
             url: 'start/signup/',
             data: $.param({data: signUpdata}),
             headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','App-key': APPKEY}
-        });*/
+        });
     };
 
     dataFactory.doLogOut = function () {

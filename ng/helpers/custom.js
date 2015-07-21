@@ -25,3 +25,11 @@
 			alert(messageString);
 		}
 	}
+	
+	function getHtmlMessage(m){
+		var msg='';
+		$.each(m, function( index, value ) {
+			msg+=value+" <br>   ";
+			});
+		return msg;
+	}

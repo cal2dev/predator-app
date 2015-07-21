@@ -25,18 +25,16 @@ class Start extends REST_Controller {
 		$this->load->view('html/signup.php');
 	}
 	function signup_post() {
-		$post_val= $this->_post_args;  // for post var $this->input->post()
+		$post_val= $this->input->post('data') ;  // for payload var $this->_post_args
 	//	print_r($this->load->model('start/start_model'));
 		
-		$tb=$this->start_model->test(USER_REG);
-		//print_r($tb);
+		//$tb=$this->start_model->test(USER_REG);
+		//print_r($post_val);exit;
 		//$tb=$this->load_model;
 		
 	//	print_r($this->Start_model);
 		
 		if($post_val){ 
-			
-			//$this->form_validation->set_rules($config);
 			$this->form_validation->set_data($post_val);
 			//$this->form_validation->set_error_delimiters('<div style=color:red;>', '</div>');
 			//$this->form_validation->set_message('is_unique', 'Error Message');
@@ -44,13 +42,9 @@ class Start extends REST_Controller {
 				$err=$this->form_validation->error_array();
 				if(isset($err['password']))	$msg[]=PASS_ERROR;
 				if(isset($err['email']))	$msg[]=PASS_DUP;
-				//var_dump($msg);
 				$this->responser($msg,400);
-				//echo validation_errors();echo "here";
-				//return "username or email id already registed";
-				// $data['errors'] = 1;
 			} else { 
-			
+				$this->start_model->registerIt($post_val);
 			}
 		}
 		//$this->response($message, 200); // 200 being the HTTP response code for success
