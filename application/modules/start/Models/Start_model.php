@@ -15,6 +15,7 @@ class Start_model extends CI_Model  {
    
    public function registerIt($details)
    {
+   	$done=0;
    	$fname=$details['firstName']  ;
    	$lname=$details['lastName'] ;
    	$email=$details['email'] ;
@@ -34,33 +35,33 @@ class Start_model extends CI_Model  {
    				'userReg_unique_id' => $uniqueId,
    				'userReg_now' => $now
    		));
-   		 /*
-   		if($insert_id != null && $insert_id !=''){
-   			$get_timestamp = $db->getRow('select * from '.USER_REGISTER.' where userReg_id ='. $insert_id );
-   			$uniqueId=md5($email.$get_timestamp['userReg_dateTime']);
-   			$str="userReg_id=".$insert_id;
-   			$update =  $db->update(USER_REGISTER,'userReg_unique_id=?',$str,array($uniqueId));
-   			$insert_id=  $db->insert(USER_DETAILS,array(
-   					'userReg_id' => $get_timestamp['userReg_id'],
-   					'userReg_recordHash' => $get_timestamp['userReg_recordHash'],
-   					'userReg_unique_id' => $uniqueId,
-   					'userReg_user_name' => $get_timestamp['userReg_email_id'],
-   					'userReg_email_id' => $get_timestamp['userReg_email_id'],
-   					'userReg_password' => $get_timestamp['userReg_password'],
-   					'userDetails_firstname' => $fname,
-   					'userDetails_lastname' => $lname
-   			));
-   			return $get_timestamp['userReg_recordHash'];
-   		}else{
-   			return false;
-   		} */
-   			
-   	
+  	 if($insert_id){
+			  	 	$sdata = array('fname'  => $fname,
+			  	 					'lname'  => $lname,
+							        'record_id'=> $record_hash,
+							        'uqi' => $uniqueId );
+					$this->set_session($sdata);
+   					$done=1;
+  		 }
    
-   
-   	//	ArrayDisplay($get_timestamp);
-   	//echo "==decy==>".decryption($get_timestamp['userReg_password'],ENC_LOGIN_PASSWORD);
-   	//print_r($details);
-   
+   return $done;
    }
+   
+   // call to set session and cookie
+   function set_session($sdata){
+   		$COOKIE_EXPIRY_IN_DAYS = COOKIE_EXPIRY_IN_DAYS;
+	   	$this->session->set_userdata($sdata);
+	  // 	print_r($this->session);
+	 	 $data=array("uiq"=>$sdata['uqi']);
+	   	$cookie = array(
+	   			'name'   => LOGIN_COOKIE,
+	   			'value'  => json_encode($data),
+	   			'expire' => time()+(3600*24*$COOKIE_EXPIRY_IN_DAYS)
+	   	);
+	   	set_cookie($cookie);
+   }
+   
+   
+   
+   
 }

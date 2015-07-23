@@ -1,8 +1,8 @@
-DROP TRIGGER IF EXISTS insert_userData;
-DELIMITER $$ 
-CREATE TRIGGER insert_userData AFTER INSERT 
+DROP TRIGGER IF EXISTS insert_userData; 
+DROP TRIGGER IF EXISTS on_register; 
+CREATE TRIGGER on_register AFTER INSERT 
       ON app_user_register
-      FOR EACH ROW   BEGIN     
+      FOR EACH ROW       
 INSERT   INTO
       app_user_data
       (userReg_id, userReg_recordHash, userReg_unique_id,userReg_user_name,userReg_email_id,userReg_password,userData_firstname,userData_lastname)   
@@ -18,7 +18,4 @@ INSERT   INTO
       FROM
          app_user_register   
       WHERE
-         userReg_id = NEW.userReg_id;
-END
-$$
-DELIMITER ;
+         userReg_id = NEW.userReg_id 

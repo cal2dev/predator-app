@@ -19,7 +19,7 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
         controller: 'signUpController',
         templateUrl: BASE_URL+'start/signup'
     })
-    .when('/home', {
+    .when('/onBoard', {
         controller: '',
         templateUrl: BASE_URL+'onBoard/home'
     })
@@ -31,5 +31,5 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
         controller: '',
         templateUrl: BASE_URL+'onBoard/contact'
     })
-    .otherwise({ redirectTo: '/home' });
+    .otherwise({ redirectTo: '/onBoard' });
 }]);

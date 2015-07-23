@@ -3,6 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Start extends REST_Controller {
 
+	protected $msg = [];
 	
 	public function __construct() {
 		parent::__construct();
@@ -10,8 +11,6 @@ class Start extends REST_Controller {
 		$this->load->library('form_validation');
 		$this->load->helper('url');
 		$this->load->model('start/start_model');
-	//	$this->load->library("session");
-		//   $this->load->module('upload_file');
 	}
 	public function index_get()
 	{
@@ -22,6 +21,8 @@ class Start extends REST_Controller {
 		$this->load->view('html/login.php');
 	}
 	function signup_get() {
+		$ck=get_cookie(LOGIN_COOKIE);
+		//echo"==>";print_r($ck);	echo"==>";print_r($_COOKIE);
 		$this->load->view('html/signup.php');
 	}
 	function signup_post() {
@@ -44,7 +45,15 @@ class Start extends REST_Controller {
 				if(isset($err['email']))	$msg[]=PASS_DUP;
 				$this->responser($msg,400);
 			} else { 
-				$this->start_model->registerIt($post_val);
+				$is_register=$this->start_model->registerIt($post_val);
+				if($is_register){
+					$msg[]=REG_SUC;
+					$ck=get_cookie(LOGIN_COOKIE);
+					//echo"==>";print_r($ck);
+					$this->responser($msg,200);
+				}else{
+					$this->responser($msg,400);
+				}
 			}
 		}
 		//$this->response($message, 200); // 200 being the HTTP response code for success
@@ -52,7 +61,8 @@ class Start extends REST_Controller {
 	}
 	function responser($msg,$code) {
 	//	$message = array("error");
-		$message = array("error" => count($msg),"message" =>$msg);
+		$message = array("nos" => count($msg),"message" =>$msg);
 		$this->response($message, $code); // 200 - for success, 400 - error
 	}
+	
 }

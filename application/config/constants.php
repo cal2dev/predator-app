@@ -88,3 +88,4 @@ define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 include(APPPATH. 'config/db_schema.php');
 include(APPPATH. 'config/messages.php');
+include(APPPATH. 'config/app_constants.php');

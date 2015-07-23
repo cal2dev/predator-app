@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <base href="<?php echo base_url()?>">
-    <title>{{ title }}</title>
+    <title>App</title>
     <link href='http://fonts.googleapis.com/css?family=Josefin+Sans:400,600,400italic' rel='stylesheet' type='text/css'>
     <!--------------------------------------------------- LIBs ---------------------------------------------------->
 
@@ -16,7 +16,7 @@
     <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    	<link href="<?php echo base_url()?>assets/css/main.css" rel="stylesheet">
+    	<link href="<?php echo base_url()?>assets/css/onboard.css" rel="stylesheet">
     	<link href="<?php echo base_url()?>assets/css/animate.css" rel="stylesheet">
     	<!-- Angular Notification CSS -->
     	<link href="<?php echo base_url()?>assets/css/angular-ui-notification.min.css" rel="stylesheet">

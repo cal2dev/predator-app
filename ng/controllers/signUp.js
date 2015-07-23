@@ -16,11 +16,10 @@ App.controller('signUpController', ['$scope','$rootScope','dataFactory','$locati
 			//console.log(loginCredentials);
             dataFactory.signUp(loginCredentials)
                 .success(function (response,status) {
-                	var emailText = 'Email: '+response.email;
-                	//console.log(emailText);
-                	var passwordText = 'Password: '+response.password;
-                	//console.log(passwordText);
-                //	$location.path("about");
+                	
+                	var msg=getHtmlMessage(response.message);
+                	Notification.success({message: msg, title: '<i>Great!!  </i>', delay: 20000});
+                	$location.path("onBoard");
                 })
                 .error(function(report,status) {
                 	console.log(report);
