@@ -49,10 +49,16 @@ class Start_model extends CI_Model  {
    
    // call to set session and cookie
    function set_session($sdata){
+   		$uqi=$sdata['uqi'];
+   		$uhash='3323';
    		$COOKIE_EXPIRY_IN_DAYS = COOKIE_EXPIRY_IN_DAYS;
+   		
+   		// session 
 	   	$this->session->set_userdata($sdata);
 	  // 	print_r($this->session);
-	 	 $data=array("uiq"=>$sdata['uqi']);
+	  
+	   	// cookie
+	 	$data=array("uiq"=>$uqi,"uhash"=>$uhash);
 	   	$cookie = array(
 	   			'name'   => LOGIN_COOKIE,
 	   			'value'  => json_encode($data),

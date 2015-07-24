@@ -18,12 +18,12 @@ class Start extends REST_Controller {
 	}
 	
 	function login_get() {
-		$this->load->view('html/login.php');
+		$this->load->view('login.php');
 	}
 	function signup_get() {
 		$ck=get_cookie(LOGIN_COOKIE);
 		//echo"==>";print_r($ck);	echo"==>";print_r($_COOKIE);
-		$this->load->view('html/signup.php');
+		$this->load->view('signup.php');
 	}
 	function signup_post() {
 		$post_val= $this->input->post('data') ;  // for payload var $this->_post_args

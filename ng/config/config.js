@@ -20,8 +20,8 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
         templateUrl: BASE_URL+'start/signup'
     })
     .when('/onBoard', {
-        controller: '',
-        templateUrl: BASE_URL+'onBoard/home'
+        controller: 'onBoardController',
+        templateUrl: BASE_URL+'onBoard/board'
     })
     .when('/about', {
         controller: '',
