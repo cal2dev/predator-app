@@ -11,7 +11,7 @@ $config = array(
 						array(
 								'field' => 'email',
 								'label' => 'Email Address',
-								'rules' => 'trim|required|is_unique['.USER_REG.'.userReg_email_id]|valid_email'
+								'rules' => 'trim|required|is_unique['.USER_REG.'.'.USER_REG_EMAIL.']|valid_email'
 								
 							)
        					 ),

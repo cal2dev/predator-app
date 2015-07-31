@@ -12,10 +12,10 @@ class OnBoard extends MY_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('onBoard/onBoard_model');
-		$this->check_for_user();
 	}
 	public function index()
 	{
+		$this->check_for_user();
 		$this->load->view('onBoard');
 	}
 	public function board() {

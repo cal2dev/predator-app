@@ -26,6 +26,7 @@ class Start extends REST_Controller {
 		$this->load->view('signup.php');
 	}
 	function signup_post() {
+		$msg=array();
 		$post_val= $this->input->post('data') ;  // for payload var $this->_post_args
 	//	print_r($this->load->model('start/start_model'));
 		
@@ -45,7 +46,7 @@ class Start extends REST_Controller {
 				if(isset($err['email']))	$msg[]=PASS_DUP;
 				$this->responser($msg,400);
 			} else { 
-				$is_register=$this->start_model->registerIt($post_val);
+				$is_register=$this->start_model->registerIt(filterParameters($post_val));
 				if($is_register){
 					$msg[]=REG_SUC;
 					$ck=get_cookie(LOGIN_COOKIE);
@@ -57,7 +58,6 @@ class Start extends REST_Controller {
 			}
 		}
 		//$this->response($message, 200); // 200 being the HTTP response code for success
-		exit;
 	}
 	function responser($msg,$code) {
 	//	$message = array("error");

@@ -5,17 +5,17 @@ CREATE TRIGGER on_register AFTER INSERT
       FOR EACH ROW       
 INSERT   INTO
       app_user_data
-      (userReg_id, userReg_recordHash, userReg_unique_id,userReg_user_name,userReg_email_id,userReg_password,userData_firstname,userData_lastname)   
+      (Reg_id, Reg_recordHash, Reg_unique_id,Reg_user_name,Reg_email_id,Reg_password,Data_firstname,Data_lastname)   
 	SELECT
-         userReg_id,
-         userReg_recordHash,
-         userReg_unique_id,
-         userReg_user_name,
-         userReg_email_id,
-         userReg_password,
-         userReg_firstname,
-         userReg_lastname   
+         Reg_id,
+         Reg_recordHash,
+         Reg_unique_id,
+         Reg_user_name,
+         Reg_email_id,
+         Reg_password,
+         Reg_firstname,
+         Reg_lastname   
       FROM
          app_user_register   
       WHERE
-         userReg_id = NEW.userReg_id 
+         Reg_id = NEW.Reg_id 

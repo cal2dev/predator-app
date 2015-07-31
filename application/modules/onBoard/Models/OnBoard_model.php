@@ -1,5 +1,5 @@
 <?php 
-
+require_once(APPPATH."models/Entities/AppUserData.php");
 class OnBoard_model extends CI_Model  {
 	
 	private $userData = array();
@@ -20,10 +20,10 @@ class OnBoard_model extends CI_Model  {
    	$rid=$this->getRecordHash($uqi);
    	$query= $this->db->get_where(USER_DATA, array('userReg_recordHash' => $rid));
    	$data=$query->row();
-   	$userDataMap=new userData_map($data);
-  	$this->userData=$userDataMap;
+   	$rg = new AppUserData();
+  	$this->userData=$rg;
   	print_r($this->userData);
-   	exit;
+   //	exit;
    }
    
    public function getRecordHash($uqi){
@@ -35,27 +35,4 @@ class OnBoard_model extends CI_Model  {
    }
    
    
-}
-
-class userData_map {
-	public  $fname='';
-	public  $lname='';
-	public  $name='';
-	public  $user_name='';
-	public  $userReg_email_id='';
-	public  $userReg_password='';
-	
-	
-	public function __construct($data) {
-		$this->fname=$data->userData_firstname;
-		$this->lname=$data->userData_lastname;
-	}
-	
-	public function getFname() {
-		return $this->fname;
-	}
-	
-	public function setFname($lname) {
-		$this->lname = $lname;
-	}
 }
