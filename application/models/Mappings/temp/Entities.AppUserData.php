@@ -4,12 +4,22 @@ use Doctrine\ORM\Mapping\ClassMetadataInfo;
 
 $metadata->setInheritanceType(ClassMetadataInfo::INHERITANCE_TYPE_NONE);
 $metadata->setPrimaryTable(array(
-   'name' => 'app_user_register',
+   'name' => 'app_user_data',
+   'indexes' => 
+   array(
+   'Reg_id' => 
+   array(
+    'columns' => 
+    array(
+    0 => 'Reg_id',
+    ),
+   ),
+   ),
   ));
 $metadata->setChangeTrackingPolicy(ClassMetadataInfo::CHANGETRACKING_DEFERRED_IMPLICIT);
 $metadata->mapField(array(
-   'fieldName' => 'regId',
-   'columnName' => 'Reg_id',
+   'fieldName' => 'dataId',
+   'columnName' => 'Data_id',
    'type' => 'integer',
    'nullable' => false,
    'options' => 
@@ -19,8 +29,8 @@ $metadata->mapField(array(
    'id' => true,
   ));
 $metadata->mapField(array(
-   'fieldName' => 'regUniqueId',
-   'columnName' => 'Reg_unique_id',
+   'fieldName' => 'regRecordhash',
+   'columnName' => 'Reg_recordHash',
    'type' => 'string',
    'nullable' => true,
    'length' => 120,
@@ -30,8 +40,8 @@ $metadata->mapField(array(
    ),
   ));
 $metadata->mapField(array(
-   'fieldName' => 'regRecordhash',
-   'columnName' => 'Reg_recordHash',
+   'fieldName' => 'regUniqueId',
+   'columnName' => 'Reg_unique_id',
    'type' => 'string',
    'nullable' => true,
    'length' => 120,
@@ -55,7 +65,7 @@ $metadata->mapField(array(
    'fieldName' => 'regEmailId',
    'columnName' => 'Reg_email_id',
    'type' => 'string',
-   'nullable' => false,
+   'nullable' => true,
    'length' => 120,
    'options' => 
    array(
@@ -66,7 +76,7 @@ $metadata->mapField(array(
    'fieldName' => 'regPassword',
    'columnName' => 'Reg_password',
    'type' => 'string',
-   'nullable' => false,
+   'nullable' => true,
    'length' => 120,
    'options' => 
    array(
@@ -74,61 +84,8 @@ $metadata->mapField(array(
    ),
   ));
 $metadata->mapField(array(
-   'fieldName' => 'regFirstname',
-   'columnName' => 'Reg_firstname',
-   'type' => 'string',
-   'nullable' => false,
-   'length' => 100,
-   'options' => 
-   array(
-   'fixed' => false,
-   ),
-  ));
-$metadata->mapField(array(
-   'fieldName' => 'regLastname',
-   'columnName' => 'Reg_lastname',
-   'type' => 'string',
-   'nullable' => false,
-   'length' => 100,
-   'options' => 
-   array(
-   'fixed' => false,
-   ),
-  ));
-$metadata->mapField(array(
-   'fieldName' => 'regActive',
-   'columnName' => 'Reg_active',
-   'type' => 'boolean',
-   'nullable' => false,
-   'options' => 
-   array(
-   'default' => '0',
-   ),
-  ));
-$metadata->mapField(array(
-   'fieldName' => 'regStatus',
-   'columnName' => 'Reg_status',
-   'type' => 'integer',
-   'nullable' => false,
-   'options' => 
-   array(
-   'unsigned' => false,
-   'default' => '0',
-   ),
-  ));
-$metadata->mapField(array(
-   'fieldName' => 'regUnlogincount',
-   'columnName' => 'Reg_unlogincount',
-   'type' => 'integer',
-   'nullable' => true,
-   'options' => 
-   array(
-   'unsigned' => false,
-   ),
-  ));
-$metadata->mapField(array(
-   'fieldName' => 'regNow',
-   'columnName' => 'Reg_now',
+   'fieldName' => 'dataFirstname',
+   'columnName' => 'Data_firstname',
    'type' => 'string',
    'nullable' => true,
    'length' => 100,
@@ -137,7 +94,95 @@ $metadata->mapField(array(
    'fixed' => false,
    ),
   ));
-/* $metadata->mapField(array(
+$metadata->mapField(array(
+   'fieldName' => 'dataLastname',
+   'columnName' => 'Data_lastname',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataImage',
+   'columnName' => 'Data_image',
+   'type' => 'text',
+   'nullable' => true,
+   'length' => 65535,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataGender',
+   'columnName' => 'Data_gender',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 20,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataBirthday',
+   'columnName' => 'Data_birthday',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataLocation',
+   'columnName' => 'Data_location',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataHometown',
+   'columnName' => 'Data_hometown',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataRelationship',
+   'columnName' => 'Data_relationship',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'dataTimezone',
+   'columnName' => 'Data_timezone',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 100,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
    'fieldName' => 'regCstamp',
    'columnName' => 'Reg_cstamp',
    'type' => 'datetime',
@@ -156,5 +201,24 @@ $metadata->mapField(array(
    array(
    'default' => 'CURRENT_TIMESTAMP',
    ),
-  )); */
+  ));
 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_IDENTITY);
+$metadata->mapOneToOne(array(
+   'fieldName' => 'reg',
+   'targetEntity' => 'Entities.AppUserRegister',
+   'cascade' => 
+   array(
+   ),
+   'fetch' => 2,
+   'mappedBy' => NULL,
+   'inversedBy' => NULL,
+   'joinColumns' => 
+   array(
+   0 => 
+   array(
+    'name' => 'Reg_id',
+    'referencedColumnName' => 'Reg_id',
+   ),
+   ),
+   'orphanRemoval' => false,
+  ));

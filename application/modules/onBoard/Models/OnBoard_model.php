@@ -1,11 +1,12 @@
 <?php 
-require_once(APPPATH."models/Entities/AppUserData.php");
+
 class OnBoard_model extends CI_Model  {
 	
-	private $userData = array();
+	var $em;
 	
 	function __construct(){  
       parent::__construct();  
+      $this->em = $this->doctrine->em;
    }    
    
   
@@ -15,23 +16,40 @@ class OnBoard_model extends CI_Model  {
       return $row; 
    }
    
-   
-   public function loadUser($uqi,$sec_hash=''){
-   	$rid=$this->getRecordHash($uqi);
-   	$query= $this->db->get_where(USER_DATA, array('userReg_recordHash' => $rid));
-   	$data=$query->row();
-   	$rg = new AppUserData();
-  	$this->userData=$rg;
-  	print_r($this->userData);
-   //	exit;
+   /****************************************************
+    *  Function to load user on cookie 
+    ****************************************************/
+   public function cookie_loadUser($cookie_data,$sec_hash=''){
+   	$uiq=$cookie_data->uiq;
+   	$uchash=$cookie_data->uchash;
+   	
+	$ckeck_fr_valid_hash = $this->em->getRepository('Entities\AppLoginData')->findOneBy(array('logdCookieHash' => $uchash));
+	   if($ckeck_fr_valid_hash){
+	   	$usd=$this->get_userData($uiq);
+	   }else{
+	   	$usd=FALSE;
+	   }
+   	return $usd;
    }
    
-   public function getRecordHash($uqi){
-   	$this->db->select('userReg_recordHash');
-   	$this->db->where('userReg_unique_id', $uqi);
-   	$query= $this->db->get(USER_DATA);
-   	$dt=$query->row();
-   	return $dt->userReg_recordHash;
+   /****************************************************
+    *  Function to get Entities\AppUserData Object
+    ****************************************************/
+   public function get_userData($val){
+   
+   	if(ctype_digit($val)){
+   		$get_hs = $this->em->getRepository('Entities\AppUserData')->findOneBy(array('regUniqueId' => $val));
+   	}else{
+   		$get_hs = $this->em->getRepository('Entities\AppUserData')->findOneBy(array('regRecordhash' => $val));
+   	}
+   	
+  //	\Doctrine\Common\Util\Debug::dump($get_hs);
+   	if($get_hs){
+   		 $hs=$get_hs;
+   	}else{
+   		 $hs=FALSE;
+   	}
+   	return $hs;
    }
    
    

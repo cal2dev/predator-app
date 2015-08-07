@@ -39,27 +39,24 @@
    39 $metadata->setVersionMapping($mapping);
    40 $metadata->mapField($mapping);
    41 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_AUTO);
-   42 $metadata->mapOneToOne(array(
-   43    'fieldName' => 'address',
-   44    'targetEntity' => 'Doctrine\\Tests\\ORM\\Mapping\\Address',
-   45    'cascade' =>
-   46    array(
-   47    0 => 'remove',
-   48    ),
-   49    'mappedBy' => NULL,
-   50    'inversedBy' => 'user',
-   51    'joinColumns' =>
-   52    array(
-   53    0 =>
-   54    array(
-   55     'name' => 'address_id',
-   56     'referencedColumnName' => 'id',
-   57     'onDelete' => 'CASCADE',
-   58    ),
-   59    ),
-   60    'orphanRemoval' => false,
-   61   ));
-   62 $metadata->mapOneToMany(array(
+    $metadata->mapOneToOne(
+		array(
+       	'fieldName' => 'address',
+       	'targetEntity' => 'Doctrine\\Tests\\ORM\\Mapping\\Address',
+      	 'cascade' =>array(
+								 0 => 'remove', //persist , merge , refresh ,detach  , all
+						   ),
+      	'mappedBy' => NULL,
+       	'inversedBy' => 'user',
+       'joinColumns' =>array( 0 =>array(
+									'name' => 'address_id',
+									'referencedColumnName' => 'id',
+									'onDelete' => 'CASCADE',
+								   ),
+				),
+       'orphanRemoval' => false,
+      ));
+    $metadata->mapOneToMany(array(
    63    'fieldName' => 'phonenumbers',
    64    'targetEntity' => 'Doctrine\\Tests\\ORM\\Mapping\\Phonenumber',
    65    'cascade' =>
@@ -125,210 +122,76 @@
   125         'allocationSize' => 100,
   126         'initialValue' => 1,
   127     ));
-  
+ ===================================================================
+ 
+ 
+ 
+  static public function loadMetadata(ClassMetadata $metadata)
+    {
+        $metadata->setIdGeneratorType(ClassMetadata::GENERATOR_TYPE_AUTO);
+        $metadata->setChangeTrackingPolicy(ClassMetadata::CHANGETRACKING_DEFERRED_EXPLICIT);
+        $metadata->setCustomRepositoryClass('Bookstore\BookRepository');
+        $metadata->setPrimaryTable(array('name' => 'book'));
+
+        $metadata->mapField(array(
+            'fieldName'  => 'id',
+            'type'       => 'integer',
+            'id'         => true,
+            'columnName' => 'id',
+        ));
+        $metadata->mapField(array(
+            'fieldName'  => 'name',
+            'type'       => 'string',
+            'columnName' => 'name',
+        ));
+        $metadata->mapField(array(
+            'fieldName'  => 'status',
+            'type'       => 'string',
+            'default'    => 'published',
+            'columnName' => 'status',
+        ));
+
+        $metadata->mapOneToOne(array(
+            'fieldName'         => 'author',
+            'targetEntity'      => 'Doctrine\Tests\ORM\Tools\EntityGeneratorAuthor',
+            'mappedBy'          => 'book',
+            'cascade'           => array(),
+            'fetch'             => ClassMetadata::FETCH_LAZY,
+            'joinColumns'       => array(array(
+                'name'                 => 'author_id',
+                'referencedColumnName' => 'id',
+                'unique'               => true,
+            )),
+        ));
+        $metadata->mapManyToMany(array(
+            'fieldName'         => 'comments',
+            'targetEntity'      => 'Doctrine\Tests\ORM\Tools\EntityGeneratorComment',
+            'cascade'           => array(),
+            'fetch'             => ClassMetadata::FETCH_LAZY,
+            'joinTable'         => array(
+                'name'               => 'book_comment',
+                'joinColumns'        => array(array(
+                    'name'                 => 'book_id',
+                    'referencedColumnName' => 'id',
+                )),
+                'inverseJoinColumns' => array(array(
+                    'name'                 => 'comment_id',
+                    'referencedColumnName' => 'id',
+                )),
+            ),
+        ));
+
+        $metadata->setLifecycleCallbacks(array(
+            'postLoad'  => array('loading'),
+            'preRemove' => array('willBeRemoved'),
+        ));
+    }
+==================================================================== 
   ------------------------------------------------------------------
   function __construct() {
     	$this->userregUstamp = new \DateTime("now");
     	$this->userregUstamp = new \DateTime("now");
     }
-	=============================================================
+=============================================================
   
-  <?php
-namespace Entities;
-
-class AppUserRegister
-{
-    
-    private $userregUniqueId;
-    
-	private $userregId;
-   
-	private $userregRecordhash;
-
-    private $userregUserName;
-
-    private $userregEmailId;
-
-    private $userregPassword;
-
-    private $userregFirstname;
-
-    private $userregLastname;
-
-    private $userregActive = '0';
-
-    private $userregStatus = '0';
-
-    private $userregUnlogincount;
-
-    private $userregNow;
-   
-
-    public function setUserregUniqueId($userregUniqueId)
-    {
-        $this->userregUniqueId = $userregUniqueId;
-
-        return $this;
-    }
-
-    public function getUserregUniqueId()
-    {
-        return $this->userregUniqueId;
-    }
-
-    public function setUserregRecordhash($userregRecordhash)
-    {
-        $this->userregRecordhash = $userregRecordhash;
-
-        return $this;
-    }
-
-    
-    public function getUserregRecordhash()
-    {
-        return $this->userregRecordhash;
-    }
-
-    
-    public function setUserregUserName($userregUserName)
-    {
-        $this->userregUserName = $userregUserName;
-
-        return $this;
-    }
-
-    public function getUserregUserName()
-    {
-        return $this->userregUserName;
-    }
-
-    public function setUserregEmailId($userregEmailId)
-    {
-        $this->userregEmailId = $userregEmailId;
-
-        return $this;
-    }
-
-   
-    public function getUserregEmailId()
-    {
-        return $this->userregEmailId;
-    }
-
-    
-    public function setUserregPassword($userregPassword)
-    {
-        $this->userregPassword = $userregPassword;
-
-        return $this;
-    }
-
-    public function getUserregPassword()
-    {
-        return $this->userregPassword;
-    }
-
-    
-    public function setUserregFirstname($userregFirstname)
-    {
-        $this->userregFirstname = $userregFirstname;
-
-        return $this;
-    }
-
-    public function getUserregFirstname()
-    {
-        return $this->userregFirstname;
-    }
-
-   
-    public function setUserregLastname($userregLastname)
-    {
-        $this->userregLastname = $userregLastname;
-
-        return $this;
-    }
-
-    public function getUserregLastname()
-    {
-        return $this->userregLastname;
-    }
-
-    public function setUserregActive($userregActive)
-    {
-        $this->userregActive = $userregActive;
-
-        return $this;
-    }
-
-    public function getUserregActive()
-    {
-        return $this->userregActive;
-    }
-
-    public function setUserregStatus($userregStatus)
-    {
-        $this->userregStatus = $userregStatus;
-
-        return $this;
-    }
-
-    public function getUserregStatus()
-    {
-        return $this->userregStatus;
-    }
-
-    public function setUserregUnlogincount($userregUnlogincount)
-    {
-        $this->userregUnlogincount = $userregUnlogincount;
-
-        return $this;
-    }
-
-    public function getUserregUnlogincount()
-    {
-        return $this->userregUnlogincount;
-    }
-
-    public function setUserregNow($userregNow)
-    {
-        $this->userregNow = $userregNow;
-
-        return $this;
-    }
-
-    public function getUserregNow()
-    {
-        return $this->userregNow;
-    }
-
-    public function setUserregCstamp($userregCstamp)
-    {
-        $this->userregCstamp = $userregCstamp;
-
-        return $this;
-    }
-
-    public function getUserregCstamp()
-    {
-        return $this->userregCstamp;
-    }
-
-    public function setUserregUstamp($userregUstamp)
-    {
-        $this->userregUstamp = $userregUstamp;
-
-        return $this;
-    }
-
-    public function getUserregUstamp()
-    {
-        return $this->userregUstamp;
-    }
-
-    public function getUserregId()
-    {
-        return $this->userregId;
-    }
-}
 ==============================================

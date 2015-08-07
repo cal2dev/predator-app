@@ -67,16 +67,6 @@ class AppUserRegister
      */
     private $regNow;
 
-    /**
-     * @var \DateTime
-     */
-    private $regCstamp = 'CURRENT_TIMESTAMP';
-
-    /**
-     * @var \DateTime
-     */
-    private $regUstamp = 'CURRENT_TIMESTAMP';
-
 
     /**
      * Get regId
@@ -351,62 +341,4 @@ class AppUserRegister
     {
         return $this->regNow;
     }
-
-    /**
-     * Set regCstamp
-     *
-     * @param \DateTime $regCstamp
-     *
-     * @return AppUserRegister
-     */
-    public function setRegCstamp($regCstamp)
-    {
-        $this->regCstamp = $regCstamp;
-
-        return $this;
-    }
-
-    /**
-     * Get regCstamp
-     *
-     * @return \DateTime
-     */
-    public function getRegCstamp()
-    {
-        return $this->regCstamp;
-    }
-
-    /**
-     * Set regUstamp
-     *
-     * @param \DateTime $regUstamp
-     *
-     * @return AppUserRegister
-     */
-    public function setRegUstamp($regUstamp)
-    {
-        $this->regUstamp = $regUstamp;
-
-        return $this;
-    }
-
-    /**
-     * Get regUstamp
-     *
-     * @return \DateTime
-     */
-    public function getRegUstamp()
-    {
-        return $this->regUstamp;
-    }
-    
-    /***************************
-    Manual code for mapping
-    /**************************/
-    
-    public function addUserData(AppUserdata $userData)
-    {
-    	$userData->setReg($this); // synchronously updating inverse side
-    }
-    
 }

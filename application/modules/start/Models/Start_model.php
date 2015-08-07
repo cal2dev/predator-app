@@ -31,55 +31,93 @@ class Start_model extends CI_Model  {
    	$dt['now']			=$now = date("YmdHis");
    	$dt['record_hash']	=$record_hash=md5($email.$now);
    	$dt['uniqueId'] 	=$uniqueId= hexdec( substr(md5($fname.$lname.$now.$email), 0, 10) );
-	$insert_id=$this->store_registerIt($dt);
-  	 if($insert_id){
-			  	 	$sdata = array('fname'  => $fname,
-			  	 					'lname'  => $lname,
-							        'record_id'=> $record_hash,
-							        'uqi' => $uniqueId );
-					$this->set_session($sdata);
+	$udata=$this->map_registerIt($dt);	//print_r($udata);
+  	 if($udata){
+					$this->create_login($udata);
    					$done=1;
   		 } 
    
    return $done;
    }
    
-   function store_registerIt($data){
+   function map_registerIt($data){
 	   $id=0;
 	   $rg = new Entities\AppUserRegister();
        $rg->setregEmailId($data['email']);
-       $rg->setregUniqueId($data['uniqueId']);
-       $rg->setregRecordhash($data['record_hash']);
-       $rg->setregUserName($data['email']);
-       $rg->setregEmailId($data['email']);
-      /*  $rg->setregPassword($data['password']);
-       $rg->setregFirstname($data['firstName']);
-       $rg->setregLastname($data['lastName']);
-       $rg->setregNow($data['now']); */
+       $rg->setRegUniqueId($data['uniqueId']);
+       $rg->setRegRecordhash($data['record_hash']);
+       $rg->setRegUserName($data['email']);
+       $rg->setRegEmailId($data['email']);
+       $rg->setRegPassword($data['password']);
+       $rg->setRegFirstname($data['firstName']);
+       $rg->setRegLastname($data['lastName']);
+       $rg->setRegNow($data['now']);
+       
+       $rd = new Entities\AppUserdata();
+       $rd->setRegUniqueId($data['uniqueId']);
+       $rd->setRegRecordhash($data['record_hash']);
+       $rd->setRegUserName($data['email']);
+       $rd->setRegEmailId($data['email']); 
+       $rd->setRegPassword($data['password']);
+       $rd->setDataFirstname($data['firstName']);
+       $rd->setDataLastname($data['lastName']);
+       $rg->addUserData($rd);
+         
         try {
             //save to database
             $this->em->persist($rg);
+          	$this->em->persist($rd);
             $this->em->flush();
             $id=$rg->getregId();
         }
         catch(Exception $err){
             die($err->getMessage());
         }
-        return $id; 
+        return $rd; 
    }
    
-   // call to set session and cookie
-   function set_session($sdata){
-   	$uqi=$sdata['uqi'];
-   	$uhash='3323';
+   
+   
+   /****************************************************
+    *  call to set session and cookie
+    ****************************************************/
+   
+   function create_login(Entities\AppUserData $sdata){
+   	$uqi=$sdata->getRegUniqueId();
+   	$reH=$sdata->getRegRecordhash();
+   	$dId=$sdata->getDataId();
+   	
+   	$st=new stdClass();
+   	$st->uqi=$uqi;
+   	$st->reH=$reH;
+   	$st->u_email=$getRegEmailId;
+   	$st->u_fname=$sdata->getDataFirstname;
+   	$st->u_lname=$sdata->getDataLastname;
+   	
+   	$uchash=substr(md5(date("YmdHis")), 0, 10);
    	$COOKIE_EXPIRY_IN_DAYS = COOKIE_EXPIRY_IN_DAYS;
-   	//print_r($this->session);
-   	// session
-   	$this->session->set_userdata($sdata);
-   	// 
-   	 
+   	
+   	$ld = new Entities\AppLoginData();
+   	$ld->setDataId($dId);
+   	$ld->setRegRecordhash($reH);
+   	$ld->setLogdCookieHash($uchash);
+   	
+   	//print_r($sdata);exit;
+   //	$this->session->sess_destroy();
+   	$this->session->set_userdata(array("u_data"=>$st,"is_logged"=>TRUE));
+   	$ld->setSessId($this->session->session_id);
+   	//var_dump($this->session->is_logged);
+   	try {
+   		//save to database
+   		$this->em->persist($ld);
+   		$this->em->flush();
+   	}
+   	catch(Exception $err){
+   		die($err->getMessage());
+   	}
+   	
    	// cookie
-   	$data=array("uiq"=>$uqi,"uhash"=>$uhash);
+   	$data=array("uiq"=>$uqi,"uchash"=>$uchash);
    	$cookie = array(
    			'name'   => LOGIN_COOKIE,
    			'value'  => json_encode($data),

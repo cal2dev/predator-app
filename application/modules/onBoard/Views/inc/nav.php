@@ -6,18 +6,7 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
-             		 <li>
-                        <a href="#/about">About</a>
-                    </li>
-                    <li>
-                        <a href="#/contact">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#/login">Login</a>
-                    </li>
-                    <li class="message-preview">
-                        <a href="#/signup">Sign Up</a>
-                    </li>
+                 <?php if($this->session->is_logged){ ?>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -28,7 +17,7 @@
                                         <img class="media-object"  alt="">
                                     </span>
                                     <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
+                                        <h5 class="media-heading"><strong><?php //$fname.' '.$lname ?></strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -123,6 +112,20 @@
 	                    </li>
                     </ul>
                 </li>
+                <?php }else{ ?>
+                 <li>
+                        <a href="#/about">About</a>
+                    </li>
+                    <li>
+                        <a href="#/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#/login">Login</a>
+                    </li>
+                    <li >
+                        <a href="#/signup">Sign Up</a>
+                    </li>
+                <?php } ?>
             </ul>
             <!-- /.navbar-collapse -->
         </nav>

@@ -137,7 +137,7 @@ $metadata->mapField(array(
    'fixed' => false,
    ),
   ));
-/* $metadata->mapField(array(
+$metadata->mapField(array(
    'fieldName' => 'regCstamp',
    'columnName' => 'Reg_cstamp',
    'type' => 'datetime',
@@ -156,5 +156,5 @@ $metadata->mapField(array(
    array(
    'default' => 'CURRENT_TIMESTAMP',
    ),
-  )); */
+  ));
 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_IDENTITY);

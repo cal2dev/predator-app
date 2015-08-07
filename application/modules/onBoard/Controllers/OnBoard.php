@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class OnBoard extends MY_Controller {
 
-	private $is_logged = 0;
+	private $is_logged = FALSE;
 	private $cok = 0;
 	private $cok_hash = 0;
 	private $uqi = 0;
@@ -12,14 +12,19 @@ class OnBoard extends MY_Controller {
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->model('onBoard/onBoard_model');
+		$this->check_for_user();
 	}
 	public function index()
 	{
-		$this->check_for_user();
 		$this->load->view('onBoard');
 	}
 	public function board() {
-		$this->load->view('html/home.html');
+		if($this->session->is_logged){
+			$u_data=$this->session->u_data;
+		//	$fname=$this->session->u_data->u_fname;
+		//	$lname=$this->session->u_data->u_lname;
+		}
+		$this->load->view('html/home.html',$u_data);
 	}
 	public function login() {
 		$this->load->view('html/loginUI.html');
@@ -34,11 +39,18 @@ class OnBoard extends MY_Controller {
 	}
 	protected function check_for_user() {
 		$this->cok=json_decode(get_cookie(LOGIN_COOKIE));
-		//print_r($cok);	//print_r($_COOKIE);
-		$this->uqi=$this->session->uqi;
-		if($this->uqi){
-			$this->is_logged=1;
-			$this->onBoard_model->loadUser($this->uqi);
+		//$this->session->is_logged=false;
+		if($this->session->is_logged){
+			
+		}else{
+			//print_r($this->cok);	 //var_dump($_SESSION);
+			if(property_exists($this->cok,'uiq'))
+			$ud=$this->onBoard_model->cookie_loadUser($this->cok);
+			if($ud){
+				$this->load->model('start/start_model');
+				$is_register=$this->start_model->create_login($ud);
+			}
+			
 		}
 	}
 }
