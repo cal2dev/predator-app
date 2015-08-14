@@ -7,27 +7,32 @@ class OnBoard extends MY_Controller {
 	private $cok = 0;
 	private $cok_hash = 0;
 	private $uqi = 0;
+	private $template_data;
 	
 	public function __construct() {
 		parent::__construct();
+		$this->template_data=new stdClass();
+		
 		$this->load->helper('url');
 		$this->load->model('onBoard/onBoard_model');
 		$this->check_for_user();
 	}
 	public function index()
 	{
-		$this->load->view('onBoard');
+		// dump_it($this->session);
+		if($this->session->is_logged){
+			$this->template_data->is_logged=$this->session->is_logged;
+			$this->template_data->u_fname=$this->session->u_data->u_fname;
+			$this->template_data->u_lname=$this->session->u_data->u_lname;
+			$this->template_data->u_email=$this->session->u_data->u_email;
+		}else{
+			$this->template_data->is_logged=0;
+		}
+		$this->load->view('onBoard',$this->template_data);
 	}
 	public function board() {
-		if($this->session->is_logged){
-			$u_data=$this->session->u_data;
-		//	$fname=$this->session->u_data->u_fname;
-		//	$lname=$this->session->u_data->u_lname;
-		}
-		$this->load->view('html/home.html',$u_data);
-	}
-	public function login() {
-		$this->load->view('html/loginUI.html');
+		
+		$this->load->view('html/home.html');
 	}
 	
 	public function contact() {
@@ -44,11 +49,13 @@ class OnBoard extends MY_Controller {
 			
 		}else{
 			//print_r($this->cok);	 //var_dump($_SESSION);
-			if(property_exists($this->cok,'uiq'))
-			$ud=$this->onBoard_model->cookie_loadUser($this->cok);
-			if($ud){
-				$this->load->model('start/start_model');
-				$is_register=$this->start_model->create_login($ud);
+			if(isset($this->cok)){
+				if(property_exists($this->cok,'uiq'))
+				$ud=$this->onBoard_model->cookie_loadUser($this->cok);
+				if($ud){
+					$this->load->model('start/start_model');
+					$is_register=$this->start_model->create_login($ud);
+				}
 			}
 			
 		}

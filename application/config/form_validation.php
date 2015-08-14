@@ -15,6 +15,19 @@ $config = array(
 								
 							)
        					 ),
+        'login' => array(
+               			 array(
+								'field' => 'password',
+								'label' => 'Password',
+								'rules' => 'trim|required|min_length[5]',//|maxlength[15]
+               			 		'messages'=>array('min_length' => 'Error Message on rule2 for this field_name')
+               			 		
+               			 ),
+						array(
+								'field' => 'email',
+								'label' => 'Email Address'
+							)
+       					 ),
         'email' => array(
                 array(
                         'field' => 'emailaddress',

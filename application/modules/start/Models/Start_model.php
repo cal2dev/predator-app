@@ -39,7 +39,26 @@ class Start_model extends CI_Model  {
    
    return $done;
    }
-   
+   public function logMeIn($details)
+   {
+   	$done=0;
+   	$dt=array();
+   	$done=$this->validate_logIn($details);
+   return $done;
+   }
+   public function validate_logIn($details){
+   	$is_valid=FALSE;
+   	$u_data = $this->em->getRepository('Entities\AppUserData')->findOneBy(array('regEmailId' => $details['email']));
+   	if($u_data){
+   		//dump_it($details);
+   		//dump_it($u_data->getRegEmailId());
+   		if(md5($details['password']) == $u_data->getRegPassword() ){
+   			$is_valid=TRUE;
+   			$this->create_login($u_data);
+   		}
+   	}
+   	return $is_valid;
+   }
    function map_registerIt($data){
 	   $id=0;
 	   $rg = new Entities\AppUserRegister();
@@ -90,9 +109,9 @@ class Start_model extends CI_Model  {
    	$st=new stdClass();
    	$st->uqi=$uqi;
    	$st->reH=$reH;
-   	$st->u_email=$getRegEmailId;
-   	$st->u_fname=$sdata->getDataFirstname;
-   	$st->u_lname=$sdata->getDataLastname;
+   	$st->u_email=$sdata->getRegEmailId();
+   	$st->u_fname=$sdata->getDataFirstname();
+   	$st->u_lname=$sdata->getDataLastname();
    	
    	$uchash=substr(md5(date("YmdHis")), 0, 10);
    	$COOKIE_EXPIRY_IN_DAYS = COOKIE_EXPIRY_IN_DAYS;

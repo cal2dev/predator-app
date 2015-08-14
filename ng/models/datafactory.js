@@ -13,7 +13,12 @@ App.factory('dataFactory', ['$http', function($http) {
     *--------------------------------*/
 
     dataFactory.validateLogin = function (loginCredentials) {
-        return $http.post(urlBase+'login', loginCredentials,config_post);
+    	return $http({
+            method: 'POST',
+            url: 'start/login/',
+            data: $.param({data: loginCredentials}),
+            headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','App-key': APPKEY}
+        });
     };
 
     dataFactory.signUp = function (signUpdata) {

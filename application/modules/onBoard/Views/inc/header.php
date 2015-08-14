@@ -20,6 +20,8 @@
     	<link href="<?php echo base_url()?>assets/css/animate.css" rel="stylesheet">
     	<!-- Angular Notification CSS -->
     	<link href="<?php echo base_url()?>assets/css/angular-ui-notification.min.css" rel="stylesheet">
+    	<!-- Angular Loading Notification CSS -->
+    	<link href="<?php echo base_url()?>assets/css/loading-bar.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url()?>assets/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -38,6 +40,7 @@
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/angular-cookie.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/angular-animate.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>assets/js/angular-ui-notification.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>assets/js/loading-bar.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

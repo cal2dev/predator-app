@@ -17,16 +17,59 @@ class Start extends REST_Controller {
 		$this->login_get(); 
 	}
 	
+	
+	/****************************************************
+	 *  Function to login page
+	 ****************************************************/
 	function login_get() {
 		$this->load->view('login.php');
 	}
+	
+	
+	/****************************************************
+	 *  Function to login
+	 ****************************************************/
+	
+	function login_post() {
+		$msg=array();
+		$is_log=0;
+		$post_val= $this->input->post('data') ;
+	//	dump_it($post_val);
+		if($post_val){
+			$this->form_validation->set_data($post_val);
+			if ($this->form_validation->run('login') == FALSE) {
+				$err=$this->form_validation->error_array();
+				if(isset($err['password']))	$msg[]=PASS_ERROR;
+				if(isset($err['email']))	$msg[]=PASS_DUP;
+				$this->responser($msg,400);
+			} else {
+				$is_log=$this->start_model->logMeIn(filterParameters($post_val));
+				if($is_log){
+					$msg[]=LOG_SUC;
+					$this->responser($msg,200);
+				}else{
+					$msg[]=LOG_ERROR;
+					$this->responser($msg,400);
+				}
+			}
+		}
+	}
+	
+	/****************************************************
+	 *  Function to load signup page
+	 ****************************************************/
 	function signup_get() {
-		$ck=get_cookie(LOGIN_COOKIE);
-		//echo"==>";print_r($ck);	echo"==>";print_r($_COOKIE);
 		$this->load->view('signup.php');
 	}
+	
+	
+	/****************************************************
+	 *  Function to signup
+	 ****************************************************/
+	
 	function signup_post() {
 		$msg=array();
+		$is_register=0;
 		$post_val= $this->input->post('data') ;  // for payload var $this->_post_args
 	//	print_r($this->load->model('start/start_model'));
 		
@@ -49,7 +92,7 @@ class Start extends REST_Controller {
 				$is_register=$this->start_model->registerIt(filterParameters($post_val));
 				if($is_register){
 					$msg[]=REG_SUC;
-					$ck=get_cookie(LOGIN_COOKIE);
+					// $ck=get_cookie(LOGIN_COOKIE);
 					//echo"==>";print_r($ck);
 					$this->responser($msg,200);
 				}else{

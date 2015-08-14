@@ -1,5 +1,5 @@
 /** APP MODULE INIT */
-var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate','ui-notification']);
+var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate','ui-notification','angular-loading-bar']);
 
 /** APP RUNTIME CONFIG */
 App.run(['$rootScope','ipCookie','$location',function($rootScope,ipCookie,$location){
@@ -12,11 +12,11 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
 	$httpProvider.defaults.headers.common['App-key'] = APPKEY;
 	//$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
     $routeProvider.when('/login', {
-        controller: 'authController',
+        controller: 'startController',
         templateUrl: BASE_URL+'start/login'
     })
     .when('/signup', {
-        controller: 'signUpController',
+        controller: 'startController',
         templateUrl: BASE_URL+'start/signup'
     })
     .when('/onBoard', {

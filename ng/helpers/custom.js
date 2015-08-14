@@ -11,7 +11,11 @@
 	| @elementClass = error or success class to be applied to element 
 	| @messageString = error message string
 	*/
-
+	/**
+	| @arg1 = element to be selected for messsage
+	| @arg2 = error or success class to be applied to element 
+	| @arg3 = error message string
+	*/
 	function showMessage(elementId,elementClass,messageString) {
 		var el = document.getElementById(elementId);
 		if(el) {

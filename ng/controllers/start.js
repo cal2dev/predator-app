@@ -1,9 +1,9 @@
-App.controller('onBoardController', ['$scope','$rootScope','dataFactory','$location','$cookieStore','ipCookie','Notification', function($scope,$rootScope,dataFactory,$location,$cookieStore,ipCookie,Notification){
+App.controller('startController', ['$scope','$rootScope','dataFactory','$location','$cookieStore','ipCookie','Notification', function($scope,$rootScope,dataFactory,$location,$cookieStore,ipCookie,Notification){
 	if(ipCookie('cookie_login')){
 		$location.path("dashboard");
 	}
 	$scope.pageClass = 'page-home';
-	$rootScope.rightmenu = [];
+	//$rootScope.rightmenu = [];
 	/** Submitting signup form */
 	$scope.signup = function(isValid) {
 		if(isValid) {
@@ -21,17 +21,38 @@ App.controller('onBoardController', ['$scope','$rootScope','dataFactory','$locat
                 	Notification.success({message: msg, title: '<i>Great!!  </i>', delay: 20000});
                 	$location.path("onBoard");
                 })
-                .error(function(report,status) {
-                	console.log(report);
-                	var msg=getHtmlMessage(report.message);
+                .error(function(response,status) {
+                	//console.log(response);
+                	var msg=getHtmlMessage(response.message);
                 	//Notification.error({message: 'Error notification 1s', delay: 5000});
                 	Notification.error({message: msg, title: '<i>OOps!! Somethng Went Wrong </i>', delay: 10000});
                 	console.log();
 					//console.log(status);
-                //	showMessage("msg","danger",report.error+" Error Code "+status+".");
+                //	showMessage("msg","danger",response.error+" Error Code "+status+".");
                 });
 		}else{
 			alert('Bad');
+		}
+	}
+	
+	
+	/** Submitting login form */
+	$scope.login = function(isValid) {
+		if(isValid) {
+			var loginCredentials = {
+                "email" : $scope.login.email,
+                "password" : $scope.login.password
+            };
+            dataFactory.validateLogin(loginCredentials)
+                .success(function (response,status) {
+                	var msg=getHtmlMessage(response.message);
+                	Notification.success({message: msg, title: '<i>Great!!  </i>', delay: 20000});
+                	$location.path("onBoard");
+                })
+                .error(function(response,status) {
+                	var msg=getHtmlMessage(response.message);
+                	Notification.error({message: msg, title: '<i>OOps!! Somethng Went Wrong </i>', delay: 10000});
+                });
 		}
 	}
 	

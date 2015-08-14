@@ -41,3 +41,11 @@ function filterParameters($array) {
 	return $array;
 
 }
+function dump_it($val,$exit=0){
+		echo "<pre>";
+			print_r($val);
+		echo "</pre>";
+		if($exit==1){
+			exit;
+		}
+}

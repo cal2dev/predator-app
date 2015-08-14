@@ -22,7 +22,7 @@
 	                  <div class="form-group" ng-class="{'has-error':loginForm.password.$invalid && !loginForm.password.$pristine}">
 	                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
 	                    <div class="col-lg-10">
-	                      	<input type="password" class="form-control" name="password" data-ng-model="login.password" placeholder="Password" ng-minlength="5" ng-maxlength="20" required>
+	                      	<input type="password" class="form-control" name="password" data-ng-model="login.password" placeholder="Password" ng-minlength="4" ng-maxlength="20" required>
 	                      	<p ng-show="loginForm.password.$invalid && !loginForm.password.$pristine" class="help-block">Enter a valid password.</p>
 	                    </div>
 	                  </div>

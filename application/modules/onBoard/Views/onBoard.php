@@ -1,8 +1,9 @@
-<?php $this->load->view('inc/header');?>
+<?php $this->load->view('inc/header'); ?>
 <body><div id="wrapper">
 
         <?php $this->load->view('inc/nav');?>
 
+        <div id="loading-bar" class="bar"></div>
         <div id="page-wrapper" class="view-animate-container">
 
             <div class="container-fluid page {{ pageClass }}" ng-view>
