@@ -1,5 +1,5 @@
 /** APP MODULE INIT */
-var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate','ui-notification','angular-loading-bar']);
+var App = angular.module('predator', ['ngRoute','ngCookies','ipCookie','ngAnimate','ui-notification']); // ,'angular-loading-bar'
 
 /** APP RUNTIME CONFIG */
 App.run(['$rootScope','ipCookie','$location',function($rootScope,ipCookie,$location){
@@ -32,4 +32,44 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
         templateUrl: BASE_URL+'onBoard/contact'
     })
     .otherwise({ redirectTo: '/onBoard' });
+    $httpProvider.interceptors.push('myHttpInterceptor');
 }]);
+
+App.factory('myHttpInterceptor', function ($q, $window,$rootScope) {
+    $rootScope.ActiveAjaxConectionsWithouthNotifications = 0;
+    var checker = function(parameters,status){
+            //YOU CAN USE parameters.url TO IGNORE SOME URL
+            if(status == "request"){
+                $rootScope.ActiveAjaxConectionsWithouthNotifications+=1;
+                $('#loading_view').show();
+            }
+            if(status == "response"){
+                $rootScope.ActiveAjaxConectionsWithouthNotifications-=1;
+
+            }
+            if($rootScope.ActiveAjaxConectionsWithouthNotifications<=0){
+                $rootScope.ActiveAjaxConectionsWithouthNotifications=0;
+                $('#loading_view').hide();
+            }
+
+
+    };
+return {
+    'request': function(config) {
+        checker(config,"request");
+        return config;
+    },
+   'requestError': function(rejection) {
+       checker(rejection.config,"request");
+      return $q.reject(rejection);
+    },
+    'response': function(response) {
+         checker(response.config,"response");
+      return response;
+    },
+   'responseError': function(rejection) {
+        checker(rejection.config,"response");
+      return $q.reject(rejection);
+    }
+  };
+});

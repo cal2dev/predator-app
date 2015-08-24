@@ -230,7 +230,21 @@ ul.alert-dropdown {
   transition: all 1s ease-in-out;
 }
 
-
+/* loading css*/
+#loading_view{
+opacity: 0.6;
+    position: absolute;
+    background-color: #020202;
+    width: 99%;
+    height: 85%;
+    z-index: 5000;
+    text-align: center;
+    vertical-align: bottom;
+    color:white;
+}
+#loading_view h1{
+margin-top: 8%;
+}
 /* ANIMATIONS
 ============================================================================= */
 
