@@ -108,4 +108,20 @@ class Start extends REST_Controller {
 		$this->response($message, $code); // 200 - for success, 400 - error
 	}
 	
+	/****************************************************
+	 *  Function to Logout
+	 ****************************************************/
+	
+	function logout_get() {
+		$msg=array();
+		$is_logout=$this->start_model->logMeOut();
+		if($is_logout){
+			$msg[]='Logout Success';
+			// $ck=get_cookie(LOGIN_COOKIE);
+			//echo"==>";print_r($ck);
+			$this->responser($msg,200);
+		}else{
+			$this->responser($msg,400);
+		}
+	}
 }

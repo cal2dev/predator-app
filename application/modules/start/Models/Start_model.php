@@ -20,6 +20,9 @@ class Start_model extends CI_Model  {
        
    }
    
+   /****************************************************
+    *  call to create login
+    ****************************************************/
    public function registerIt($details)
    {
    	$done=0;
@@ -39,6 +42,11 @@ class Start_model extends CI_Model  {
    
    return $done;
    }
+   
+   /****************************************************
+    *  call to validate login
+    ****************************************************/
+   
    public function logMeIn($details)
    {
    	$done=0;
@@ -46,6 +54,11 @@ class Start_model extends CI_Model  {
    	$done=$this->validate_logIn($details);
    return $done;
    }
+   
+   /****************************************************
+    *  func to validate login
+    ****************************************************/
+   
    public function validate_logIn($details){
    	$is_valid=FALSE;
    	$u_data = $this->em->getRepository('Entities\AppUserData')->findOneBy(array('regEmailId' => $details['email']));
@@ -59,6 +72,8 @@ class Start_model extends CI_Model  {
    	}
    	return $is_valid;
    }
+   
+   
    function map_registerIt($data){
 	   $id=0;
 	   $rg = new Entities\AppUserRegister();
@@ -143,5 +158,25 @@ class Start_model extends CI_Model  {
    			'expire' => time()+(3600*24*$COOKIE_EXPIRY_IN_DAYS)
    	);
    	set_cookie($cookie);
+   }
+   function logMeOut(){
+   	$sess=session_id();
+   	$u_data = $this->em->getRepository('Entities\AppLoginData')->findOneBy(array('sessId' => $sess));
+   	if($u_data){
+	   	$u_data->setLogdRemark('logging out');
+	   	
+	   	try {
+	   		//save to database
+	   		$this->em->persist($u_data);
+	   		$this->em->flush();
+	   	}
+	   	catch(Exception $err){
+	   		die($err->getMessage());
+	   	}
+   	}
+   
+   	$this->session->sess_destroy();
+   	delete_cookie(LOGIN_COOKIE);
+   	return TRUE;
    }
 }

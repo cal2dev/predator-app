@@ -31,7 +31,9 @@ App.config(['$routeProvider', '$locationProvider','$httpProvider',function($rout
         controller: '',
         templateUrl: BASE_URL+'onBoard/contact'
     })
-    .otherwise({ redirectTo: '/onBoard' });
+    .otherwise({ controller: 'onBoardController',redirectTo: '/onBoard' });
+    
+    // for loading
     $httpProvider.interceptors.push('myHttpInterceptor');
 }]);
 

@@ -51,17 +51,17 @@ $metadata->mapField(array(
    ),
   ));
 $metadata->mapField(array(
-		'fieldName' => 'sessId',
-		'columnName' => 'Sess_id',
-		'type' => 'string',
-		'nullable' => true,
-		'length' => 120,
-		'options' =>
-		array(
-				'fixed' => false,
-		),
-));
-/* $metadata->mapField(array(
+   'fieldName' => 'sessId',
+   'columnName' => 'Sess_id',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 120,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
+$metadata->mapField(array(
    'fieldName' => 'logdCstamp',
    'columnName' => 'LogD_cstamp',
    'type' => 'datetime',
@@ -80,5 +80,16 @@ $metadata->mapField(array(
    array(
    'default' => '0000-00-00 00:00:00',
    ),
-  )); */
+  ));
+$metadata->mapField(array(
+   'fieldName' => 'logdRemark',
+   'columnName' => 'LogD_remark',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 200,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_IDENTITY);

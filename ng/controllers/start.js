@@ -1,6 +1,6 @@
-App.controller('startController', ['$scope','$rootScope','dataFactory','$location','$cookieStore','ipCookie','Notification', function($scope,$rootScope,dataFactory,$location,$cookieStore,ipCookie,Notification){
-	if(ipCookie('cookie_login')){
-		$location.path("dashboard");
+App.controller('startController', ['$scope','$rootScope','$window','dataFactory','$location','$cookieStore','ipCookie','Notification', function($scope,$rootScope,$window,dataFactory,$location,$cookieStore,ipCookie,Notification){
+	if(ipCookie('app_onboard_token')){
+	//	$location.path("onBoard");
 	}
 	$scope.pageClass = 'page-home';
 	//$rootScope.rightmenu = [];
@@ -19,6 +19,8 @@ App.controller('startController', ['$scope','$rootScope','dataFactory','$locatio
                 	
                 	var msg=getHtmlMessage(response.message);
                 	Notification.success({message: msg, title: '<i>Great!!  </i>', delay: 20000});
+                	//$location.path("onBoard");
+                	$window.location.reload();
                 	$location.path("onBoard");
                 })
                 .error(function(response,status) {
@@ -47,6 +49,8 @@ App.controller('startController', ['$scope','$rootScope','dataFactory','$locatio
                 .success(function (response,status) {
                 	var msg=getHtmlMessage(response.message);
                 	Notification.success({message: msg, title: '<i>Great!!  </i>', delay: 20000});
+                	//$location.path("onBoard");
+                	$window.location.reload();
                 	$location.path("onBoard");
                 })
                 .error(function(response,status) {
@@ -56,7 +60,12 @@ App.controller('startController', ['$scope','$rootScope','dataFactory','$locatio
 		}
 	}
 	
+	
+	
+	
 }])
+
+
 App.directive('pwCheck', [function () {
     return {
       require: 'ngModel',

@@ -81,4 +81,15 @@ $metadata->mapField(array(
    'default' => '0000-00-00 00:00:00',
    ),
   ));
+$metadata->mapField(array(
+   'fieldName' => 'logdRemark',
+   'columnName' => 'LogD_remark',
+   'type' => 'string',
+   'nullable' => true,
+   'length' => 200,
+   'options' => 
+   array(
+   'fixed' => false,
+   ),
+  ));
 $metadata->setIdGeneratorType(ClassMetadataInfo::GENERATOR_TYPE_IDENTITY);

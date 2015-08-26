@@ -183,8 +183,8 @@ $metadata->mapField(array(
    ),
   ));
 $metadata->mapField(array(
-   'fieldName' => 'regCstamp',
-   'columnName' => 'Reg_cstamp',
+   'fieldName' => 'dataCstamp',
+   'columnName' => 'Data_cstamp',
    'type' => 'datetime',
    'nullable' => false,
    'options' => 
@@ -193,8 +193,8 @@ $metadata->mapField(array(
    ),
   ));
 $metadata->mapField(array(
-   'fieldName' => 'regUstamp',
-   'columnName' => 'Reg_ustamp',
+   'fieldName' => 'dataUstamp',
+   'columnName' => 'Data_ustamp',
    'type' => 'datetime',
    'nullable' => false,
    'options' => 

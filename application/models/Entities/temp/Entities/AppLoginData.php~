@@ -32,6 +32,21 @@ class AppLoginData
      */
     private $sessId;
 
+    /**
+     * @var \DateTime
+     */
+    private $logdCstamp = 'CURRENT_TIMESTAMP';
+
+    /**
+     * @var \DateTime
+     */
+    private $logdUstamp = '0000-00-00 00:00:00';
+
+    /**
+     * @var string
+     */
+    private $logdRemark;
+
 
     /**
      * Get logdId
@@ -137,5 +152,77 @@ class AppLoginData
     public function getSessId()
     {
         return $this->sessId;
+    }
+
+    /**
+     * Set logdCstamp
+     *
+     * @param \DateTime $logdCstamp
+     *
+     * @return AppLoginData
+     */
+    public function setLogdCstamp($logdCstamp)
+    {
+        $this->logdCstamp = $logdCstamp;
+
+        return $this;
+    }
+
+    /**
+     * Get logdCstamp
+     *
+     * @return \DateTime
+     */
+    public function getLogdCstamp()
+    {
+        return $this->logdCstamp;
+    }
+
+    /**
+     * Set logdUstamp
+     *
+     * @param \DateTime $logdUstamp
+     *
+     * @return AppLoginData
+     */
+    public function setLogdUstamp($logdUstamp)
+    {
+        $this->logdUstamp = $logdUstamp;
+
+        return $this;
+    }
+
+    /**
+     * Get logdUstamp
+     *
+     * @return \DateTime
+     */
+    public function getLogdUstamp()
+    {
+        return $this->logdUstamp;
+    }
+
+    /**
+     * Set logdRemark
+     *
+     * @param string $logdRemark
+     *
+     * @return AppLoginData
+     */
+    public function setLogdRemark($logdRemark)
+    {
+        $this->logdRemark = $logdRemark;
+
+        return $this;
+    }
+
+    /**
+     * Get logdRemark
+     *
+     * @return string
+     */
+    public function getLogdRemark()
+    {
+        return $this->logdRemark;
     }
 }

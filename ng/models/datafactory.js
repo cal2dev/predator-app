@@ -33,8 +33,13 @@ App.factory('dataFactory', ['$http', function($http) {
         });
     };
 
-    dataFactory.doLogOut = function () {
-        return $http.get(urlBase+'logout');
+    dataFactory.logout = function () {
+        //alert('here');
+    	  return $http({
+              method: 'GET',
+              url: 'start/logout/',
+              headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8','App-key': APPKEY}
+          });
     };
 
     /*-------------------------------*

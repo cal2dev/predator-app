@@ -1,4 +1,5 @@
 <!-- Navigation -->
+
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -102,7 +103,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href ng-click="logout()"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                         <li class="divider"></li>
                          <li>

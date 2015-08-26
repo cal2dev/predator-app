@@ -1,5 +1,5 @@
 <?php $this->load->view('inc/header'); ?>
-<body><div id="wrapper">
+<body><div id="wrapper" ng-controller="onBoardController">
 
         <?php $this->load->view('inc/nav');?>
 
